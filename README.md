@@ -73,7 +73,7 @@ cd zenbgs.github.io
 [![Portfolio](https://img.shields.io/badge/Portfolio-zenbgs.github.io-0ea5e9?style=flat-square&logo=google-chrome&logoColor=white)](https://zenbgs.github.io)
 [![GitHub](https://img.shields.io/badge/GitHub-zenbgs-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/zenbgs)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-zenbgs-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/zenbgs)
-[![Email](https://img.shields.io/badge/Email-ancientlord123@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:ancientlord123@gmail.com)
+[![Email](https://img.shields.io/badge/Email-zenbgsv@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:zenbgsv@gmail.com)
 
 </div>
 
