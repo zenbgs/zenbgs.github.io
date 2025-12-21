@@ -7,7 +7,7 @@ Personal portfolio website showcasing my journey as a DevOps Engineer & Full Sta
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-zenbgs.github.io-0ea5e9?style=for-the-badge&logo=github&logoColor=white)](https://zenbgs.github.io)
 [![Astro](https://img.shields.io/badge/Built%20with-Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
 
-<img src="https://raw.githubusercontent.com/zenbgs/zenbgs.github.io/main/images/porto.png" alt="Portfolio Preview" width="600"/>
+<img src="./images/portofolio.PNG" alt="Portfolio Preview" width="600"/>
 
 </div>
 
