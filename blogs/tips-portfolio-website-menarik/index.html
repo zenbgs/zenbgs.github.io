@@ -1,0 +1,680 @@
+<!DOCTYPE html><html lang="id"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Primary Meta Tags --><title>Tips Membuat Portfolio Website yang Menarik - Blog | Zain Bagus</title><meta name="title" content="Tips Membuat Portfolio Website yang Menarik - Blog | Zain Bagus"><meta name="description" content="Bagaimana membuat portfolio yang standout dan menarik perhatian recruiter serta klien potensial."><meta name="author" content="Zain Bagus"><meta name="keywords" content="DevOps, Cloud Engineer, Full Stack Developer, Web Developer, Indonesia, Malang, React, Node.js, Docker, Kubernetes"><link rel="canonical" href="https://zenbgs.github.io/blogs/tips-portfolio-website-menarik/"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://zenbgs.github.io/blogs/tips-portfolio-website-menarik/"><meta property="og:title" content="Tips Membuat Portfolio Website yang Menarik - Blog | Zain Bagus"><meta property="og:description" content="Bagaimana membuat portfolio yang standout dan menarik perhatian recruiter serta klien potensial."><meta property="og:image" content="https://zenbgs.github.io/images/profile-new.png"><meta property="og:site_name" content="Zain Bagus Portfolio"><meta property="og:locale" content="id_ID"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://zenbgs.github.io/blogs/tips-portfolio-website-menarik/"><meta property="twitter:title" content="Tips Membuat Portfolio Website yang Menarik - Blog | Zain Bagus"><meta property="twitter:description" content="Bagaimana membuat portfolio yang standout dan menarik perhatian recruiter serta klien potensial."><meta property="twitter:image" content="https://zenbgs.github.io/images/profile-new.png"><!-- Favicon --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg"><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.QW52Ox2j.js"></script><script>
+      // Apply theme immediately to prevent flash
+      function applyTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      }
+
+      // Apply on initial load
+      applyTheme();
+
+      // Apply after view transition swap
+      document.addEventListener('astro:after-swap', applyTheme);
+
+      // Theme toggle handler
+      function handleThemeToggle() {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      }
+
+      // Setup click listener (using event delegation for persistence)
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('#theme-toggle')) {
+          handleThemeToggle();
+        }
+      });
+
+      // Scroll Animation Observer
+      function setupScrollAnimations() {
+        const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-slide-left, .animate-slide-right, .animate-scale');
+
+        if (animatedElements.length === 0) return;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Element masuk viewport - tampilkan animasi
+              entry.target.classList.add('is-visible');
+            } else {
+              // Element keluar viewport - reset animasi agar bisa muncul lagi
+              entry.target.classList.remove('is-visible');
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        animatedElements.forEach((el) => observer.observe(el));
+      }
+
+      // Setup on initial load
+      document.addEventListener('DOMContentLoaded', setupScrollAnimations);
+
+      // Re-setup after view transitions
+      document.addEventListener('astro:after-swap', setupScrollAnimations);
+    </script><link rel="stylesheet" href="/_astro/dashboard.CvYvDYIE.css">
+<link rel="stylesheet" href="/_astro/index.OC1Rwqj4.css">
+<style>.dracula{--tw-bg-opacity: 1}.dracula .bg-white,.dracula .dark\:bg-slate-800{background-color:#44475a!important}.dracula .bg-stone-50,.dracula .dark\:bg-slate-900{background-color:#282a36!important}.dracula .text-purple-600,.dracula .dark\:text-purple-400{color:#ff79c6!important}.dracula .bg-purple-500{background-color:#bd93f9!important}.dracula .text-sky-600,.dracula .dark\:text-sky-400{color:#8be9fd!important}.nord .bg-white,.nord .dark\:bg-slate-800{background-color:#3b4252!important}.nord .bg-stone-50,.nord .dark\:bg-slate-900{background-color:#2e3440!important}.nord .text-purple-600,.nord .dark\:text-purple-400{color:#b48ead!important}.nord .bg-purple-500,.nord .bg-sky-500{background-color:#88c0d0!important}.nord .text-sky-600,.nord .dark\:text-sky-400{color:#88c0d0!important}.solarized .bg-white,.solarized .dark\:bg-slate-800{background-color:#073642!important}.solarized .bg-stone-50,.solarized .dark\:bg-slate-900{background-color:#002b36!important}.solarized .text-purple-600,.solarized .dark\:text-purple-400{color:#d33682!important}.solarized .bg-purple-500,.solarized .bg-sky-500{background-color:#2aa198!important}.solarized .text-sky-600,.solarized .dark\:text-sky-400{color:#2aa198!important}.synthwave .bg-white,.synthwave .dark\:bg-slate-800{background-color:#16213e!important}.synthwave .bg-stone-50,.synthwave .dark\:bg-slate-900{background-color:#1a1a2e!important}.synthwave .text-purple-600,.synthwave .dark\:text-purple-400{color:#ff006e!important}.synthwave .bg-purple-500,.synthwave .bg-sky-500{background-color:#ff006e!important}.synthwave .text-sky-600,.synthwave .dark\:text-sky-400{color:#00f5d4!important}.synthwave .from-sky-500{--tw-gradient-from: #ff006e !important}.synthwave .to-purple-600{--tw-gradient-to: #8338ec !important}
+#reading-progress-container[data-astro-cid-mu6cnre2]{transition:opacity .3s ease}.toc-link[data-astro-cid-xvrfupwn]{display:block;padding:.5rem .75rem;border-radius:.5rem;font-size:.875rem;color:inherit;transition:all .2s;border-left:2px solid transparent}.toc-link[data-astro-cid-xvrfupwn]:hover{background-color:#9333ea1a;color:#9333ea}.toc-link[data-astro-cid-xvrfupwn].active{background-color:#9333ea1a;color:#9333ea;border-left-color:#9333ea;font-weight:500}.dark .toc-link[data-astro-cid-xvrfupwn]:hover{background-color:#c084fc1a;color:#c084fc}.dark .toc-link[data-astro-cid-xvrfupwn].active{background-color:#c084fc1a;color:#c084fc;border-left-color:#c084fc}.toc-h3[data-astro-cid-xvrfupwn]{padding-left:1.5rem;font-size:.8125rem}.reaction-btn[data-astro-cid-2urrik7i].reacted{background:linear-gradient(135deg,#0ea5e933,#8b5cf633);border:1px solid rgba(14,165,233,.3)}.reaction-btn[data-astro-cid-2urrik7i].reacted .reacted-indicator[data-astro-cid-2urrik7i]{opacity:1;transform:scale(1)}.floating-emoji[data-astro-cid-2urrik7i]{position:absolute;font-size:1.5rem;pointer-events:none;animation:float-up 1.5s ease-out forwards}@keyframes float-up{0%{opacity:1;transform:translateY(0) scale(1) rotate(0)}to{opacity:0;transform:translateY(-150px) scale(1.5) rotate(20deg)}}.giscus-container[data-astro-cid-qdzwzgpn]{min-height:200px}.giscus{margin-top:1rem}.giscus-frame{width:100%!important}.line-clamp-2[data-astro-cid-va2vjua6]{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}#blog-content[data-astro-cid-va2vjua6] pre[data-astro-cid-va2vjua6]{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}#blog-content[data-astro-cid-va2vjua6] code[data-astro-cid-va2vjua6]{word-break:break-word}#blog-content[data-astro-cid-va2vjua6] pre[data-astro-cid-va2vjua6] code[data-astro-cid-va2vjua6]{word-break:normal;white-space:pre}.code-block-wrapper[data-astro-cid-va2vjua6]{max-width:100%;overflow:hidden;border-radius:.5rem}.code-block-wrapper[data-astro-cid-va2vjua6] pre[data-astro-cid-va2vjua6]{margin:0;border-radius:.5rem}#blog-content[data-astro-cid-va2vjua6] a[data-astro-cid-va2vjua6],#blog-content[data-astro-cid-va2vjua6] p[data-astro-cid-va2vjua6]{overflow-wrap:break-word;word-wrap:break-word;word-break:break-word}#blog-content[data-astro-cid-va2vjua6] table[data-astro-cid-va2vjua6]{display:block;max-width:100%;overflow-x:auto}#blog-content[data-astro-cid-va2vjua6] img[data-astro-cid-va2vjua6]{max-width:100%;height:auto}@media(max-width:640px){#blog-content[data-astro-cid-va2vjua6] pre[data-astro-cid-va2vjua6]{font-size:.75rem;padding:.75rem}.copy-code-btn[data-astro-cid-va2vjua6]{padding:.25rem .5rem;font-size:.65rem}}
+</style></head> <body class="min-h-screen bg-stone-50 text-stone-900 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300"> <!-- Animated Gradient Background - DISABLED for performance -->  <!-- Custom Cursor - DISABLED for performance --> <!-- <CustomCursor /> --> <!-- Cursor Trail Effect - DISABLED for performance -->  <!-- Availability Status Floating --> <div class="availability-floating fixed bottom-6 left-4 sm:left-auto sm:right-6 sm:bottom-24 z-40 group " data-astro-cid-zrp537uf><div class="flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 cursor-pointer bg-emerald-500/90 text-white hover:bg-emerald-600/90" data-astro-cid-zrp537uf><span class="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5" data-astro-cid-zrp537uf><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" data-astro-cid-zrp537uf></span><span class="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-white" data-astro-cid-zrp537uf></span></span><span class="text-xs sm:text-sm font-medium whitespace-nowrap" data-astro-cid-zrp537uf>Available for Hire</span></div><!-- Tooltip on hover - hidden on mobile --><div class="hidden sm:block absolute bottom-full right-0 mb-2 w-64 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0" data-astro-cid-zrp537uf><p class="text-sm text-stone-600 dark:text-slate-300 mb-3" data-astro-cid-zrp537uf>I&#39;m currently open to new projects and opportunities. Let&#39;s discuss your ideas!</p><a href="/contact" class="inline-flex items-center gap-2 text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300" data-astro-cid-zrp537uf>Get in Touch<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-zrp537uf><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" data-astro-cid-zrp537uf></path></svg></a></div></div> <!-- Loading Screen --> <div id="loading-screen" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white dark:bg-slate-900 transition-opacity duration-500"> <div class="flex flex-col items-center gap-4"> <!-- Branded Logo --> <div class="relative"> <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center shadow-lg shadow-sky-500/30 animate-pulse"> <span class="text-white font-bold text-2xl">ZB</span> </div> <!-- Rotating ring around logo --> <div class="absolute -inset-2 rounded-3xl border-2 border-dashed border-sky-400/50 animate-spin" style="animation-duration: 3s;"></div> </div> <!-- Loading dots --> <div class="flex items-center gap-1.5 mt-2"> <div class="w-2 h-2 rounded-full bg-sky-500 animate-bounce" style="animation-delay: 0ms;"></div> <div class="w-2 h-2 rounded-full bg-sky-500 animate-bounce" style="animation-delay: 150ms;"></div> <div class="w-2 h-2 rounded-full bg-sky-500 animate-bounce" style="animation-delay: 300ms;"></div> </div> <p class="text-sm font-medium text-stone-500 dark:text-slate-400">Memuat...</p> </div> </div>  <div class="relative flex min-h-screen flex-col overflow-x-hidden" data-astro-cid-va2vjua6> <!-- Background --> <div class="fixed top-0 left-0 -z-40 h-screen w-full page-bg-img" data-astro-cid-va2vjua6></div> <div class="fixed top-0 left-0 -z-30 h-screen w-full page-bg-img-overlay" data-astro-cid-va2vjua6></div> <nav class="fixed top-0 z-50 w-full p-3 pb-0"> <div class="relative mx-auto max-w-max min-w-0 p-1.5 font-semibold"> <div class="absolute top-0 left-0 -z-10 h-full w-full rounded-2xl bg-stone-100/85 shadow-md backdrop-blur-sm dark:bg-slate-800/85"></div> <div class="flex items-center gap-x-1"> <!-- Logo --> <a href="/" aria-label="Home" class="ml-3 size-8 shrink-0 rounded-xl bg-white overflow-hidden outline-2 outline-stone-500 dark:outline-slate-300 outline-offset-2"> <div class="size-full bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">
+ZB
+</div> </a> <!-- Nav Links - Desktop --> <div class="hidden md:flex grow items-center gap-x-1 overflow-x-auto text-nowrap"> <a href="/" class="rounded-xl px-4 py-1.5 transition-colors bg-transparent hover:bg-stone-100 dark:hover:bg-slate-700"> Home </a><a href="/blogs" class="rounded-xl px-4 py-1.5 transition-colors bg-stone-200 dark:bg-slate-700"> Blog </a><a href="/projects" class="rounded-xl px-4 py-1.5 transition-colors bg-transparent hover:bg-stone-100 dark:hover:bg-slate-700"> Projek </a><a href="/services" class="rounded-xl px-4 py-1.5 transition-colors bg-transparent hover:bg-stone-100 dark:hover:bg-slate-700"> Skill </a><a href="/contact" class="rounded-xl px-4 py-1.5 transition-colors bg-transparent hover:bg-stone-100 dark:hover:bg-slate-700"> Kontak </a> </div> <!-- Mobile Menu Button --> <button id="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false" class="md:hidden size-9 shrink-0 flex justify-center items-center rounded-xl hover:bg-stone-200 dark:hover:bg-slate-700 transition-colors ml-2"> <!-- Hamburger Icon --> <svg id="hamburger-icon" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> <!-- Close Icon --> <svg id="close-icon" class="size-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path> </svg> </button> <!-- Theme Switcher --> <div class="theme-switcher relative " data-variant="dropdown"> <!-- Dropdown Variant -->
+    <button id="theme-toggle-btn" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-stone-100 dark:bg-slate-800 hover:bg-stone-200 dark:hover:bg-slate-700 transition-all" aria-label="Change theme"> <span id="current-theme-icon" class="text-lg">☀️</span> <span id="current-theme-name" class="text-sm font-medium hidden sm:inline">Light</span> <svg class="w-4 h-4 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> </svg> </button>
+
+    <!-- Dropdown Menu -->
+    <div id="theme-dropdown" class="absolute right-0 top-full mt-2 w-48 py-2 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-stone-200 dark:border-slate-700 opacity-0 invisible translate-y-2 transition-all z-50"> <div class="px-3 py-2 text-xs font-semibold text-stone-400 dark:text-slate-500 uppercase tracking-wider">
+Pilih Tema
+</div> <button class="theme-option w-full flex items-center gap-3 px-3 py-2 hover:bg-stone-100 dark:hover:bg-slate-700 transition-colors text-left" data-theme="light"> <span class="text-lg">☀️</span> <span class="text-sm font-medium">Light</span> <span class="theme-check ml-auto opacity-0"> <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> </span> </button><button class="theme-option w-full flex items-center gap-3 px-3 py-2 hover:bg-stone-100 dark:hover:bg-slate-700 transition-colors text-left" data-theme="dark"> <span class="text-lg">🌙</span> <span class="text-sm font-medium">Dark</span> <span class="theme-check ml-auto opacity-0"> <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> </span> </button><button class="theme-option w-full flex items-center gap-3 px-3 py-2 hover:bg-stone-100 dark:hover:bg-slate-700 transition-colors text-left" data-theme="dracula"> <span class="text-lg">🧛</span> <span class="text-sm font-medium">Dracula</span> <span class="theme-check ml-auto opacity-0"> <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> </span> </button><button class="theme-option w-full flex items-center gap-3 px-3 py-2 hover:bg-stone-100 dark:hover:bg-slate-700 transition-colors text-left" data-theme="nord"> <span class="text-lg">❄️</span> <span class="text-sm font-medium">Nord</span> <span class="theme-check ml-auto opacity-0"> <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> </span> </button><button class="theme-option w-full flex items-center gap-3 px-3 py-2 hover:bg-stone-100 dark:hover:bg-slate-700 transition-colors text-left" data-theme="solarized"> <span class="text-lg">🌅</span> <span class="text-sm font-medium">Solarized</span> <span class="theme-check ml-auto opacity-0"> <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> </span> </button><button class="theme-option w-full flex items-center gap-3 px-3 py-2 hover:bg-stone-100 dark:hover:bg-slate-700 transition-colors text-left" data-theme="synthwave"> <span class="text-lg">🌆</span> <span class="text-sm font-medium">Synthwave</span> <span class="theme-check ml-auto opacity-0"> <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> </span> </button> <!-- Preview colors --> <div class="mx-3 mt-2 pt-2 border-t border-stone-200 dark:border-slate-700"> <div class="flex gap-1" id="theme-preview-colors"> <span class="w-4 h-4 rounded-full" style="background: #0ea5e9"></span> <span class="w-4 h-4 rounded-full" style="background: #8b5cf6"></span> <span class="w-4 h-4 rounded-full" style="background: #fafaf9"></span> <span class="w-4 h-4 rounded-full" style="background: #1c1917"></span> </div> </div> </div> </div> <script>(function(){const themes = [{"id":"light","name":"Light","icon":"☀️","colors":{"bg":"#fafaf9","bgSecondary":"#ffffff","text":"#1c1917","textSecondary":"#78716c","primary":"#0ea5e9","accent":"#8b5cf6"}},{"id":"dark","name":"Dark","icon":"🌙","colors":{"bg":"#0f172a","bgSecondary":"#1e293b","text":"#f1f5f9","textSecondary":"#94a3b8","primary":"#0ea5e9","accent":"#8b5cf6"}},{"id":"dracula","name":"Dracula","icon":"🧛","colors":{"bg":"#282a36","bgSecondary":"#44475a","text":"#f8f8f2","textSecondary":"#6272a4","primary":"#ff79c6","accent":"#bd93f9"}},{"id":"nord","name":"Nord","icon":"❄️","colors":{"bg":"#2e3440","bgSecondary":"#3b4252","text":"#eceff4","textSecondary":"#d8dee9","primary":"#88c0d0","accent":"#81a1c1"}},{"id":"solarized","name":"Solarized","icon":"🌅","colors":{"bg":"#002b36","bgSecondary":"#073642","text":"#839496","textSecondary":"#586e75","primary":"#2aa198","accent":"#268bd2"}},{"id":"synthwave","name":"Synthwave","icon":"🌆","colors":{"bg":"#1a1a2e","bgSecondary":"#16213e","text":"#eee","textSecondary":"#a29bfe","primary":"#ff006e","accent":"#8338ec"}}];
+
+  function setupThemeSwitcher() {
+    const root = document.documentElement;
+    const toggleBtn = document.getElementById('theme-toggle-btn');
+    const dropdown = document.getElementById('theme-dropdown');
+    const currentIcon = document.getElementById('current-theme-icon');
+    const currentName = document.getElementById('current-theme-name');
+    const themeOptions = document.querySelectorAll('.theme-option');
+    const previewColors = document.getElementById('theme-preview-colors');
+
+    // Get saved theme or default
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+
+    function applyTheme(themeId) {
+      const theme = themes.find(t => t.id === themeId);
+      if (!theme) return;
+
+      // Remove all theme classes
+      root.classList.remove('light', 'dark', 'dracula', 'nord', 'solarized', 'synthwave');
+
+      // Add appropriate class
+      if (themeId === 'light') {
+        root.classList.remove('dark');
+      } else {
+        root.classList.add('dark');
+        root.classList.add(themeId);
+      }
+
+      // Apply CSS variables
+      root.style.setProperty('--theme-bg', theme.colors.bg);
+      root.style.setProperty('--theme-bg-secondary', theme.colors.bgSecondary);
+      root.style.setProperty('--theme-text', theme.colors.text);
+      root.style.setProperty('--theme-text-secondary', theme.colors.textSecondary);
+      root.style.setProperty('--theme-primary', theme.colors.primary);
+      root.style.setProperty('--theme-accent', theme.colors.accent);
+
+      // Update UI
+      if (currentIcon) currentIcon.textContent = theme.icon;
+      if (currentName) currentName.textContent = theme.name;
+
+      // Update checkmarks
+      themeOptions.forEach(opt => {
+        const check = opt.querySelector('.theme-check');
+        const isActive = opt.dataset.theme === themeId;
+        if (check) {
+          check.style.opacity = isActive ? '1' : '0';
+        }
+        opt.classList.toggle('border-sky-500', isActive);
+        opt.classList.toggle('border-transparent', !isActive);
+      });
+
+      // Update preview colors
+      if (previewColors) {
+        previewColors.innerHTML = `
+          <span class="w-4 h-4 rounded-full" style="background: ${theme.colors.primary}"></span>
+          <span class="w-4 h-4 rounded-full" style="background: ${theme.colors.accent}"></span>
+          <span class="w-4 h-4 rounded-full" style="background: ${theme.colors.bg}"></span>
+          <span class="w-4 h-4 rounded-full" style="background: ${theme.colors.text}"></span>
+        `;
+      }
+
+      // Save to localStorage
+      localStorage.setItem('portfolio-theme', themeId);
+    }
+
+    // Toggle dropdown
+    toggleBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown?.classList.contains('opacity-100');
+
+      if (isOpen) {
+        dropdown?.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        dropdown?.classList.add('opacity-0', 'invisible', 'translate-y-2');
+      } else {
+        dropdown?.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        dropdown?.classList.add('opacity-100', 'visible', 'translate-y-0');
+      }
+    });
+
+    // Close dropdown on outside click
+    document.addEventListener('click', () => {
+      dropdown?.classList.remove('opacity-100', 'visible', 'translate-y-0');
+      dropdown?.classList.add('opacity-0', 'invisible', 'translate-y-2');
+    });
+
+    // Theme option click
+    themeOptions.forEach(opt => {
+      opt.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const themeId = opt.dataset.theme;
+        applyTheme(themeId);
+
+        // Close dropdown
+        dropdown?.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        dropdown?.classList.add('opacity-0', 'invisible', 'translate-y-2');
+      });
+    });
+
+    // Apply saved theme on load
+    applyTheme(savedTheme);
+  }
+
+  document.addEventListener('DOMContentLoaded', setupThemeSwitcher);
+  document.addEventListener('astro:after-swap', setupThemeSwitcher);
+})();</script>  </div> </div> <!-- Mobile Menu Dropdown --> <div id="mobile-menu" class="md:hidden absolute left-3 right-3 top-full mt-2 rounded-2xl bg-stone-100/95 shadow-lg backdrop-blur-sm dark:bg-slate-800/95 overflow-hidden transition-all duration-300 ease-out opacity-0 -translate-y-2 pointer-events-none"> <div class="flex flex-col p-2"> <a href="/" class="rounded-xl px-4 py-3 transition-colors font-semibold hover:bg-stone-200 dark:hover:bg-slate-700"> Home </a><a href="/blogs" class="rounded-xl px-4 py-3 transition-colors font-semibold bg-stone-200 dark:bg-slate-700"> Blog </a><a href="/projects" class="rounded-xl px-4 py-3 transition-colors font-semibold hover:bg-stone-200 dark:hover:bg-slate-700"> Projek </a><a href="/services" class="rounded-xl px-4 py-3 transition-colors font-semibold hover:bg-stone-200 dark:hover:bg-slate-700"> Skill </a><a href="/contact" class="rounded-xl px-4 py-3 transition-colors font-semibold hover:bg-stone-200 dark:hover:bg-slate-700"> Kontak </a> </div> </div> </nav> <!-- Scroll Progress Indicator --> <div id="scroll-progress" class="fixed top-0 left-0 z-[60] h-1 bg-gradient-to-r from-sky-500 to-blue-600 w-0 transition-none"></div> <script type="module">function c(){const t=document.getElementById("mobile-menu-btn"),e=document.getElementById("mobile-menu"),o=document.getElementById("hamburger-icon"),s=document.getElementById("close-icon");if(!t||!e||!o||!s)return;let n=!1;function d(){n=!n,t.setAttribute("aria-expanded",String(n)),n?(e.classList.remove("opacity-0","-translate-y-2","pointer-events-none"),e.classList.add("opacity-100","translate-y-0","pointer-events-auto"),o.classList.add("hidden"),s.classList.remove("hidden")):(e.classList.add("opacity-0","-translate-y-2","pointer-events-none"),e.classList.remove("opacity-100","translate-y-0","pointer-events-auto"),o.classList.remove("hidden"),s.classList.add("hidden"))}function a(){n&&(n=!1,t.setAttribute("aria-expanded","false"),e.classList.add("opacity-0","-translate-y-2","pointer-events-none"),e.classList.remove("opacity-100","translate-y-0","pointer-events-auto"),o.classList.remove("hidden"),s.classList.add("hidden"))}t.addEventListener("click",d),document.addEventListener("click",i=>{!t.contains(i.target)&&!e.contains(i.target)&&a()}),document.addEventListener("keydown",i=>{i.key==="Escape"&&a()}),e.querySelectorAll("a").forEach(i=>{i.addEventListener("click",a)})}c();document.addEventListener("astro:after-swap",c);function r(){const t=document.getElementById("scroll-progress");if(!t)return;function e(){const o=window.scrollY,s=document.documentElement.scrollHeight-window.innerHeight,n=s>0?o/s*100:0;t.style.width=`${n}%`}window.addEventListener("scroll",e,{passive:!0}),e()}r();document.addEventListener("astro:after-swap",r);</script> <!-- Reading Progress Bar --> <div id="reading-progress-container" class="fixed left-0 right-0 z-50 top-0 " data-target="article" data-astro-cid-mu6cnre2> <div id="reading-progress-bar" class="h-[3px] bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-150 ease-out" style="width: 0%; height: 3px;" data-astro-cid-mu6cnre2></div> </div> <script>
+  function setupReadingProgress() {
+    const container = document.getElementById('reading-progress-container');
+    const progressBar = document.getElementById('reading-progress-bar');
+
+    if (!container || !progressBar) return;
+
+    const targetSelector = container.dataset.target || 'article';
+    const target = document.querySelector(targetSelector);
+
+    if (!target) return;
+
+    function updateProgress() {
+      const targetRect = target.getBoundingClientRect();
+      const targetTop = window.scrollY + targetRect.top;
+      const targetHeight = targetRect.height;
+      const windowHeight = window.innerHeight;
+      const scrollY = window.scrollY;
+
+      // Calculate how much of the article has been scrolled
+      const scrollStart = targetTop - windowHeight;
+      const scrollEnd = targetTop + targetHeight - windowHeight;
+      const scrollRange = scrollEnd - scrollStart;
+
+      let progress = 0;
+
+      if (scrollY <= scrollStart) {
+        progress = 0;
+      } else if (scrollY >= scrollEnd) {
+        progress = 100;
+      } else {
+        progress = ((scrollY - scrollStart) / scrollRange) * 100;
+      }
+
+      progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+
+      // Show/hide based on whether we're in the article area
+      if (scrollY > targetTop - windowHeight && scrollY < targetTop + targetHeight) {
+        container.style.opacity = '1';
+      } else {
+        container.style.opacity = '0.3';
+      }
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  document.addEventListener('DOMContentLoaded', setupReadingProgress);
+  document.addEventListener('astro:after-swap', setupReadingProgress);
+</script>  <main class="flex grow flex-col pt-16" data-astro-cid-va2vjua6> <!-- Header --> <header class="relative mx-auto w-full max-w-5xl px-4 pt-8 pb-6" data-astro-cid-va2vjua6> <!-- Back Button --> <a href="/blogs" class="inline-flex items-center gap-2 text-stone-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors mb-6" data-astro-cid-va2vjua6> <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" data-astro-cid-va2vjua6> <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" data-astro-cid-va2vjua6></path> </svg>
+Kembali ke Blog
+</a> <!-- Meta --> <div class="flex flex-wrap items-center gap-3 mb-4" data-astro-cid-va2vjua6> <span class="px-3 py-1 text-sm font-medium bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 rounded-full" data-astro-cid-va2vjua6> Career </span> <span class="text-stone-500 dark:text-slate-400 text-sm" data-astro-cid-va2vjua6>28 November 2024</span> <span class="text-stone-500 dark:text-slate-400 text-sm" data-astro-cid-va2vjua6>• 6 menit</span> <span class="text-stone-500 dark:text-slate-400 text-sm" data-astro-cid-va2vjua6>•</span> <div class="view-counter inline-flex items-center gap-1.5 text-sm text-stone-500 dark:text-slate-400 " data-view-counter data-storage-key="views_blog_tips-portfolio-website-menarik" data-slug="tips-portfolio-website-menarik" data-type="blog"> <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path> </svg> <span class="view-count">-</span> <span class="text-xs">views</span> </div> <script>
+  function setupViewCounters() {
+    const counters = document.querySelectorAll('[data-view-counter]');
+
+    counters.forEach(counter => {
+      const storageKey = counter.dataset.storageKey;
+      const viewedKey = `${storageKey}_viewed`;
+      const countSpan = counter.querySelector('.view-count');
+
+      if (!storageKey || !countSpan) return;
+
+      // Get current count
+      let count = parseInt(localStorage.getItem(storageKey) || '0');
+
+      // Increment if not viewed in this session
+      if (!sessionStorage.getItem(viewedKey)) {
+        count++;
+        localStorage.setItem(storageKey, count.toString());
+        sessionStorage.setItem(viewedKey, 'true');
+      }
+
+      // Display count with animation
+      animateCount(countSpan, count);
+    });
+
+    function animateCount(element, target) {
+      const duration = 1000;
+      const start = 0;
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(start + (target - start) * easeOut);
+
+        element.textContent = formatNumber(current);
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          element.textContent = formatNumber(target);
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    function formatNumber(num) {
+      if (num >= 1000000) {
+        return (num / 1000000).toFixed(1) + 'M';
+      } else if (num >= 1000) {
+        return (num / 1000).toFixed(1) + 'K';
+      }
+      return num.toString();
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', setupViewCounters);
+  document.addEventListener('astro:after-swap', setupViewCounters);
+</script>  </div> <!-- Title --> <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 dark:text-white leading-tight mb-4" data-astro-cid-va2vjua6> Tips Membuat Portfolio Website yang Menarik </h1> <!-- Excerpt --> <p class="text-lg text-stone-600 dark:text-slate-400 max-w-3xl" data-astro-cid-va2vjua6> Bagaimana membuat portfolio yang standout dan menarik perhatian recruiter serta klien potensial. </p> <!-- Tags --> <div class="flex flex-wrap gap-2 mt-6" data-astro-cid-va2vjua6> <span class="px-3 py-1 text-xs font-medium bg-stone-100 dark:bg-slate-700 text-stone-600 dark:text-slate-300 rounded-full" data-astro-cid-va2vjua6>
+#portfolio </span><span class="px-3 py-1 text-xs font-medium bg-stone-100 dark:bg-slate-700 text-stone-600 dark:text-slate-300 rounded-full" data-astro-cid-va2vjua6>
+#career </span><span class="px-3 py-1 text-xs font-medium bg-stone-100 dark:bg-slate-700 text-stone-600 dark:text-slate-300 rounded-full" data-astro-cid-va2vjua6>
+#tips </span><span class="px-3 py-1 text-xs font-medium bg-stone-100 dark:bg-slate-700 text-stone-600 dark:text-slate-300 rounded-full" data-astro-cid-va2vjua6>
+#web-development </span> </div> </header> <!-- Content with Sidebar --> <div class="mx-auto w-full max-w-6xl px-4 pb-12" data-astro-cid-va2vjua6> <div class="flex flex-col lg:flex-row gap-8" data-astro-cid-va2vjua6> <!-- Table of Contents - Sidebar --> <aside class="lg:w-64 lg:shrink-0" data-astro-cid-va2vjua6> <div class="lg:sticky lg:top-20" data-astro-cid-va2vjua6> <div id="table-of-contents" class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm " data-content-selector="#blog-content" data-astro-cid-xvrfupwn> <h3 class="font-bold text-lg mb-4 flex items-center gap-2" data-astro-cid-xvrfupwn> <svg class="w-5 h-5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-xvrfupwn> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" data-astro-cid-xvrfupwn></path> </svg> Daftar Isi </h3> <nav id="toc-nav" class="space-y-2" data-astro-cid-xvrfupwn> <!-- Will be populated by JavaScript --> <p class="text-sm text-stone-400 dark:text-slate-500 italic" data-astro-cid-xvrfupwn>Memuat...</p> </nav> </div>  <script>
+  function setupTableOfContents() {
+    const tocContainer = document.getElementById('table-of-contents');
+    const tocNav = document.getElementById('toc-nav');
+
+    if (!tocContainer || !tocNav) return;
+
+    const contentSelector = tocContainer.dataset.contentSelector || '#blog-content';
+    const content = document.querySelector(contentSelector);
+
+    if (!content) {
+      tocNav.innerHTML = '<p class="text-sm text-stone-400 dark:text-slate-500">Konten tidak ditemukan</p>';
+      return;
+    }
+
+    // Wait a bit for markdown to render
+    setTimeout(() => {
+      const headings = content.querySelectorAll('h2, h3');
+
+      if (headings.length === 0) {
+        tocNav.innerHTML = '<p class="text-sm text-stone-400 dark:text-slate-500">Tidak ada heading</p>';
+        return;
+      }
+
+      // Generate IDs for headings and build TOC
+      let tocHtml = '';
+      headings.forEach((heading, index) => {
+        const id = `heading-${index}`;
+        heading.id = id;
+
+        const isH3 = heading.tagName === 'H3';
+        const text = heading.textContent;
+
+        tocHtml += `
+          <a href="#${id}" class="toc-link ${isH3 ? 'toc-h3' : ''}" data-toc-link="${id}">
+            ${text}
+          </a>
+        `;
+      });
+
+      tocNav.innerHTML = tocHtml;
+
+      // Setup scroll spy
+      const tocLinks = tocNav.querySelectorAll('.toc-link');
+
+      function updateActiveLink() {
+        const scrollY = window.scrollY;
+        let activeId = null;
+
+        headings.forEach(heading => {
+          const rect = heading.getBoundingClientRect();
+          if (rect.top <= 100) {
+            activeId = heading.id;
+          }
+        });
+
+        tocLinks.forEach(link => {
+          if (link.dataset.tocLink === activeId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+
+      // Smooth scroll on click
+      tocLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href').slice(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            const offset = 80;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        });
+      });
+
+      window.addEventListener('scroll', updateActiveLink, { passive: true });
+      updateActiveLink();
+    }, 100);
+  }
+
+  document.addEventListener('DOMContentLoaded', setupTableOfContents);
+  document.addEventListener('astro:after-swap', setupTableOfContents);
+</script> </div> </aside> <!-- Main Content --> <article class="flex-1 min-w-0 overflow-hidden" data-astro-cid-va2vjua6> <div class="bg-white dark:bg-slate-800 rounded-2xl p-4 sm:p-6 lg:p-10 shadow-sm overflow-hidden" data-astro-cid-va2vjua6> <div id="blog-content" class="prose prose-stone dark:prose-invert prose-sm sm:prose-base lg:prose-lg max-w-none prose-headings:font-bold prose-h2:text-xl sm:prose-h2:text-2xl prose-h2:mt-6 sm:prose-h2:mt-8 prose-h2:mb-4 prose-h3:text-lg sm:prose-h3:text-xl prose-p:leading-relaxed prose-pre:bg-slate-900 prose-pre:text-slate-100 prose-pre:relative prose-pre:overflow-x-auto prose-pre:text-xs sm:prose-pre:text-sm prose-code:text-purple-600 dark:prose-code:text-purple-400 prose-code:before:content-none prose-code:after:content-none prose-code:text-xs sm:prose-code:text-sm prose-code:break-all prose-a:text-purple-600 dark:prose-a:text-purple-400 prose-a:break-all prose-strong:text-stone-900 dark:prose-strong:text-white prose-ul:my-4 prose-li:my-1 prose-img:rounded-xl overflow-hidden" data-astro-cid-va2vjua6> <!-- Content will be rendered by JavaScript --> </div> </div> <!-- Share --> <div class="mt-6 sm:mt-8 p-4 sm:p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm" data-astro-cid-va2vjua6> <p class="font-semibold text-stone-900 dark:text-white mb-4" data-astro-cid-va2vjua6>Bagikan artikel ini:</p> <div class="flex flex-wrap gap-3" data-astro-cid-va2vjua6> <a href="https://twitter.com/intent/tweet?text=Tips%20Membuat%20Portfolio%20Website%20yang%20Menarik&url=https%3A%2F%2Fzenbgs.github.io%2Fblogs%2Ftips-portfolio-website-menarik" target="_blank" rel="noopener noreferrer" class="p-3 bg-[#1DA1F2] text-white rounded-xl hover:opacity-90 transition-opacity" data-astro-cid-va2vjua6> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" data-astro-cid-va2vjua6> <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" data-astro-cid-va2vjua6></path> </svg> </a> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fzenbgs.github.io%2Fblogs%2Ftips-portfolio-website-menarik" target="_blank" rel="noopener noreferrer" class="p-3 bg-[#0A66C2] text-white rounded-xl hover:opacity-90 transition-opacity" data-astro-cid-va2vjua6> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" data-astro-cid-va2vjua6> <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" data-astro-cid-va2vjua6></path> </svg> </a> <a href="https://api.whatsapp.com/send?text=Tips%20Membuat%20Portfolio%20Website%20yang%20Menarik%20-%20https%3A%2F%2Fzenbgs.github.io%2Fblogs%2Ftips-portfolio-website-menarik" target="_blank" rel="noopener noreferrer" class="p-3 bg-[#25D366] text-white rounded-xl hover:opacity-90 transition-opacity" data-astro-cid-va2vjua6> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" data-astro-cid-va2vjua6> <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" data-astro-cid-va2vjua6></path> </svg> </a> </div> </div> <!-- Reaction Buttons --> <div class="mt-6 sm:mt-8 p-4 sm:p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden" data-astro-cid-va2vjua6> <p class="font-semibold text-stone-900 dark:text-white mb-4" data-astro-cid-va2vjua6>Suka artikel ini?</p> <div class="reaction-buttons flex flex-wrap items-center gap-2 " data-reaction-container data-storage-key="reactions_blog_tips-portfolio-website-menarik" data-slug="tips-portfolio-website-menarik" data-type="blog" data-astro-cid-2urrik7i> <button class="reaction-btn group relative flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 bg-stone-100 dark:bg-slate-700 hover:bg-stone-200 dark:hover:bg-slate-600 rounded-full transition-all hover:scale-105 active:scale-95" data-emoji="👍" data-index="0" title="Like" data-astro-cid-2urrik7i> <span class="text-base sm:text-lg transition-transform group-hover:scale-125" data-astro-cid-2urrik7i>👍</span> <span class="reaction-count text-xs sm:text-sm font-medium text-stone-600 dark:text-slate-300" data-astro-cid-2urrik7i>0</span> <!-- Reacted indicator --> <span class="reacted-indicator absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full opacity-0 scale-0 transition-all" data-astro-cid-2urrik7i> <svg class="w-full h-full text-white p-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" data-astro-cid-2urrik7i> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" data-astro-cid-2urrik7i></path> </svg> </span> </button><button class="reaction-btn group relative flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 bg-stone-100 dark:bg-slate-700 hover:bg-stone-200 dark:hover:bg-slate-600 rounded-full transition-all hover:scale-105 active:scale-95" data-emoji="❤️" data-index="1" title="Love" data-astro-cid-2urrik7i> <span class="text-base sm:text-lg transition-transform group-hover:scale-125" data-astro-cid-2urrik7i>❤️</span> <span class="reaction-count text-xs sm:text-sm font-medium text-stone-600 dark:text-slate-300" data-astro-cid-2urrik7i>0</span> <!-- Reacted indicator --> <span class="reacted-indicator absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full opacity-0 scale-0 transition-all" data-astro-cid-2urrik7i> <svg class="w-full h-full text-white p-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" data-astro-cid-2urrik7i> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" data-astro-cid-2urrik7i></path> </svg> </span> </button><button class="reaction-btn group relative flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 bg-stone-100 dark:bg-slate-700 hover:bg-stone-200 dark:hover:bg-slate-600 rounded-full transition-all hover:scale-105 active:scale-95" data-emoji="🔥" data-index="2" title="Fire" data-astro-cid-2urrik7i> <span class="text-base sm:text-lg transition-transform group-hover:scale-125" data-astro-cid-2urrik7i>🔥</span> <span class="reaction-count text-xs sm:text-sm font-medium text-stone-600 dark:text-slate-300" data-astro-cid-2urrik7i>0</span> <!-- Reacted indicator --> <span class="reacted-indicator absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full opacity-0 scale-0 transition-all" data-astro-cid-2urrik7i> <svg class="w-full h-full text-white p-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" data-astro-cid-2urrik7i> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" data-astro-cid-2urrik7i></path> </svg> </span> </button><button class="reaction-btn group relative flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 bg-stone-100 dark:bg-slate-700 hover:bg-stone-200 dark:hover:bg-slate-600 rounded-full transition-all hover:scale-105 active:scale-95" data-emoji="👏" data-index="3" title="Clap" data-astro-cid-2urrik7i> <span class="text-base sm:text-lg transition-transform group-hover:scale-125" data-astro-cid-2urrik7i>👏</span> <span class="reaction-count text-xs sm:text-sm font-medium text-stone-600 dark:text-slate-300" data-astro-cid-2urrik7i>0</span> <!-- Reacted indicator --> <span class="reacted-indicator absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full opacity-0 scale-0 transition-all" data-astro-cid-2urrik7i> <svg class="w-full h-full text-white p-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" data-astro-cid-2urrik7i> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" data-astro-cid-2urrik7i></path> </svg> </span> </button><button class="reaction-btn group relative flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 bg-stone-100 dark:bg-slate-700 hover:bg-stone-200 dark:hover:bg-slate-600 rounded-full transition-all hover:scale-105 active:scale-95" data-emoji="🚀" data-index="4" title="Rocket" data-astro-cid-2urrik7i> <span class="text-base sm:text-lg transition-transform group-hover:scale-125" data-astro-cid-2urrik7i>🚀</span> <span class="reaction-count text-xs sm:text-sm font-medium text-stone-600 dark:text-slate-300" data-astro-cid-2urrik7i>0</span> <!-- Reacted indicator --> <span class="reacted-indicator absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full opacity-0 scale-0 transition-all" data-astro-cid-2urrik7i> <svg class="w-full h-full text-white p-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" data-astro-cid-2urrik7i> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" data-astro-cid-2urrik7i></path> </svg> </span> </button> <!-- Total reactions --> <div class="ml-1 sm:ml-2 pl-2 sm:pl-3 border-l border-stone-200 dark:border-slate-600" data-astro-cid-2urrik7i> <span class="total-reactions text-xs sm:text-sm font-medium text-stone-500 dark:text-slate-400" data-astro-cid-2urrik7i>0 reactions</span> </div> </div> <!-- Floating animation container --> <div id="floating-emojis" class="fixed inset-0 pointer-events-none z-[9999] overflow-hidden" data-astro-cid-2urrik7i></div>  <script>
+  function setupReactionButtons() {
+    const containers = document.querySelectorAll('[data-reaction-container]');
+
+    containers.forEach(container => {
+      const storageKey = container.dataset.storageKey;
+      const buttons = container.querySelectorAll('.reaction-btn');
+      const totalSpan = container.querySelector('.total-reactions');
+
+      if (!storageKey) return;
+
+      // Get stored reactions
+      let reactions = JSON.parse(localStorage.getItem(storageKey) || '{}');
+      let userReactions = JSON.parse(localStorage.getItem(`${storageKey}_user`) || '[]');
+
+      // Initialize counts
+      updateUI();
+
+      // Button click handlers
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const emoji = btn.dataset.emoji;
+          const index = btn.dataset.index;
+
+          // Toggle reaction
+          if (userReactions.includes(index)) {
+            // Remove reaction
+            userReactions = userReactions.filter(i => i !== index);
+            reactions[emoji] = Math.max(0, (reactions[emoji] || 1) - 1);
+            btn.classList.remove('reacted');
+          } else {
+            // Add reaction
+            userReactions.push(index);
+            reactions[emoji] = (reactions[emoji] || 0) + 1;
+            btn.classList.add('reacted');
+
+            // Floating emoji animation
+            createFloatingEmoji(btn, emoji);
+
+            // Button pop animation
+            btn.style.transform = 'scale(1.2)';
+            setTimeout(() => btn.style.transform = '', 200);
+          }
+
+          // Save to localStorage
+          localStorage.setItem(storageKey, JSON.stringify(reactions));
+          localStorage.setItem(`${storageKey}_user`, JSON.stringify(userReactions));
+
+          updateUI();
+        });
+      });
+
+      function updateUI() {
+        let total = 0;
+
+        buttons.forEach(btn => {
+          const emoji = btn.dataset.emoji;
+          const index = btn.dataset.index;
+          const countSpan = btn.querySelector('.reaction-count');
+          const count = reactions[emoji] || 0;
+
+          if (countSpan) countSpan.textContent = count;
+          total += count;
+
+          // Mark as reacted if user has reacted
+          if (userReactions.includes(index)) {
+            btn.classList.add('reacted');
+          } else {
+            btn.classList.remove('reacted');
+          }
+        });
+
+        if (totalSpan) {
+          totalSpan.textContent = `${total} reaction${total !== 1 ? 's' : ''}`;
+        }
+      }
+
+      function createFloatingEmoji(btn, emoji) {
+        const floatingContainer = document.getElementById('floating-emojis');
+        if (!floatingContainer) return;
+
+        const rect = btn.getBoundingClientRect();
+        const floatingEmoji = document.createElement('div');
+        floatingEmoji.className = 'floating-emoji';
+        floatingEmoji.textContent = emoji;
+        floatingEmoji.style.left = `${rect.left + rect.width / 2}px`;
+        floatingEmoji.style.top = `${rect.top}px`;
+
+        floatingContainer.appendChild(floatingEmoji);
+
+        // Remove after animation
+        setTimeout(() => floatingEmoji.remove(), 1500);
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupReactionButtons);
+  document.addEventListener('astro:after-swap', setupReactionButtons);
+</script> </div> <!-- Comments Section --> <div class="mt-6 sm:mt-8 p-4 sm:p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden" data-astro-cid-va2vjua6> <h2 class="text-xl font-bold text-stone-900 dark:text-white mb-6" data-astro-cid-va2vjua6>Komentar</h2> <div class="giscus-container " id="giscus-container" data-astro-cid-qdzwzgpn> <!-- Giscus will be loaded here --> <div class="giscus-loading flex flex-col items-center justify-center py-12 text-stone-500 dark:text-slate-400" data-astro-cid-qdzwzgpn> <svg class="w-8 h-8 animate-spin mb-3" fill="none" viewBox="0 0 24 24" data-astro-cid-qdzwzgpn> <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" data-astro-cid-qdzwzgpn></circle> <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" data-astro-cid-qdzwzgpn></path> </svg> <p class="text-sm" data-astro-cid-qdzwzgpn>Memuat komentar...</p> </div> </div> <script>(function(){const repo = "zenbgs/zenbgs.github.io";
+const repoId = "YOUR_REPO_ID";
+const category = "Announcements";
+const categoryId = "YOUR_CATEGORY_ID";
+const mapping = "pathname";
+const reactionsEnabled = true;
+const emitMetadata = false;
+const inputPosition = "bottom";
+const lang = "id";
+
+  function loadGiscus() {
+    const container = document.getElementById('giscus-container');
+    if (!container) return;
+
+    // Remove loading state
+    const loading = container.querySelector('.giscus-loading');
+
+    // Check if giscus already loaded
+    if (container.querySelector('.giscus')) {
+      if (loading) loading.remove();
+      return;
+    }
+
+    // Get current theme
+    const isDark = document.documentElement.classList.contains('dark');
+    const theme = isDark ? 'dark_dimmed' : 'light';
+
+    // Create giscus script
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.setAttribute('data-repo', repo);
+    script.setAttribute('data-repo-id', repoId);
+    script.setAttribute('data-category', category);
+    script.setAttribute('data-category-id', categoryId);
+    script.setAttribute('data-mapping', mapping);
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', reactionsEnabled ? '1' : '0');
+    script.setAttribute('data-emit-metadata', emitMetadata ? '1' : '0');
+    script.setAttribute('data-input-position', inputPosition);
+    script.setAttribute('data-theme', theme);
+    script.setAttribute('data-lang', lang);
+    script.setAttribute('data-loading', 'lazy');
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+
+    script.onload = () => {
+      if (loading) loading.remove();
+    };
+
+    container.appendChild(script);
+  }
+
+  // Update giscus theme when page theme changes
+  function updateGiscusTheme() {
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (!iframe) return;
+
+    const isDark = document.documentElement.classList.contains('dark');
+    const theme = isDark ? 'dark_dimmed' : 'light';
+
+    iframe.contentWindow.postMessage(
+      { giscus: { setConfig: { theme } } },
+      'https://giscus.app'
+    );
+  }
+
+  // Load on DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', loadGiscus);
+
+  // Reload after view transitions
+  document.addEventListener('astro:after-swap', loadGiscus);
+
+  // Listen for theme changes
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'class') {
+        updateGiscusTheme();
+      }
+    });
+  });
+
+  observer.observe(document.documentElement, { attributes: true });
+})();</script>  </div> <!-- Related Posts -->  </article> </div> </div> </main> <footer class="mx-auto mt-6 w-full max-w-5xl rounded-t-3xl bg-stone-300 p-6 text-center dark:bg-slate-700"> <p class="font-semibold">Created with ❤️ by <a href="/" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Zain Bagus</a></p> <p class="text-stone-600 dark:text-slate-400 mt-1"> <span>&copy; 2025 All rights reserved.</span> </p> <div class="flex justify-center gap-4 mt-4"> <a href="https://github.com/zenbgs" target="_blank" rel="noopener noreferrer" class="text-stone-600 hover:text-stone-900 dark:text-slate-400 dark:hover:text-slate-100 transition-colors"> <svg class="size-6" fill="currentColor" viewBox="0 0 24 24"> <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path> </svg> </a> <a href="https://linkedin.com/in/zenbgs" target="_blank" rel="noopener noreferrer" class="text-stone-600 hover:text-stone-900 dark:text-slate-400 dark:hover:text-slate-100 transition-colors"> <svg class="size-6" fill="currentColor" viewBox="0 0 24 24"> <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path> </svg> </a> <a href="https://instagram.com/zenbgs_" target="_blank" rel="noopener noreferrer" class="text-stone-600 hover:text-stone-900 dark:text-slate-400 dark:hover:text-slate-100 transition-colors"> <svg class="size-6" fill="currentColor" viewBox="0 0 24 24"> <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path> </svg> </a> <a href="https://api.whatsapp.com/send?phone=62895630959870" target="_blank" rel="noopener noreferrer" class="text-stone-600 hover:text-stone-900 dark:text-slate-400 dark:hover:text-slate-100 transition-colors"> <svg class="size-6" fill="currentColor" viewBox="0 0 24 24"> <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path> </svg> </a> <a href="mailto:zenbgsv@gmail.com" class="text-stone-600 hover:text-stone-900 dark:text-slate-400 dark:hover:text-slate-100 transition-colors"> <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path> </svg> </a> </div> </footer> </div>  <script>(function(){const content = "Portfolio website adalah first impression kamu ke dunia profesional. Berikut tips membuatnya menarik!\n\n## 1. Desain yang Clean dan Modern\n\n- Gunakan whitespace dengan baik\n- Pilih color palette yang konsisten\n- Typography yang readable\n- Mobile-responsive adalah WAJIB\n\n## 2. Konten yang Penting\n\n- **Hero Section** - Siapa kamu dan apa yang kamu lakukan\n- **Projects** - Showcase best works dengan case study\n- **Skills** - Tech stack yang kamu kuasai\n- **About** - Ceritakan story kamu\n- **Contact** - Cara menghubungi kamu\n\n## 3. Showcase Projects dengan Baik\n\n- Screenshot atau demo video\n- Tech stack yang digunakan\n- Problem yang dipecahkan\n- Link ke live demo dan source code\n\n## 4. Personal Branding\n\n- Gunakan nama domain personal\n- Konsisten dengan social media\n- Tulis blog untuk thought leadership\n\n## 5. Performance Matters\n\n- Fast loading time\n- SEO optimized\n- Accessible untuk semua\n\n## Tech Stack Recommendations\n\n- **Static**: Astro, Next.js, Gatsby\n- **Styling**: Tailwind CSS\n- **Hosting**: Vercel, Netlify, GitHub Pages\n\nIngat: Portfolio adalah representasi skill kamu. Buat yang terbaik!";
+
+    function renderMarkdown(md) {
+      let html = md
+        // Code blocks with copy button wrapper
+        .replace(/```(\w+)?\n([\s\S]*?)```/g, (match, lang, code) => {
+          const escapedCode = code.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+          return `<div class="code-block-wrapper relative group">
+            <button class="copy-code-btn absolute top-2 right-2 px-3 py-1.5 text-xs font-medium bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5" data-code="${btoa(code.trim())}">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+              <span>Copy</span>
+            </button>
+            <pre><code class="language-${lang || ''}">${escapedCode}</code></pre>
+          </div>`;
+        })
+        // Inline code
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        // Headers
+        .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+        .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+        .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+        // Bold
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+        // Italic
+        .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+        // Links
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+        // Unordered lists
+        .replace(/^- (.+)$/gm, '<li>$1</li>')
+        // Ordered lists
+        .replace(/^\d+\. (.+)$/gm, '<li>$1</li>')
+        // Paragraphs (double newlines)
+        .replace(/\n\n/g, '</p><p>')
+        // Single newlines to <br> in certain contexts
+        .replace(/\n/g, '<br>');
+
+      // Wrap in paragraph if not starting with a block element
+      if (!html.startsWith('<')) {
+        html = '<p>' + html + '</p>';
+      }
+
+      // Wrap consecutive <li> tags in <ul>
+      html = html.replace(/(<li>.*?<\/li>)+/g, '<ul>$&</ul>');
+
+      return html;
+    }
+
+    document.getElementById('blog-content').innerHTML = renderMarkdown(content);
+
+    // Setup copy code buttons
+    function setupCopyButtons() {
+      document.querySelectorAll('.copy-code-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const code = atob(btn.dataset.code);
+          try {
+            await navigator.clipboard.writeText(code);
+            btn.innerHTML = `<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span>Copied!</span>`;
+            btn.classList.add('bg-green-600', 'hover:bg-green-600');
+            setTimeout(() => {
+              btn.innerHTML = `<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg><span>Copy</span>`;
+              btn.classList.remove('bg-green-600', 'hover:bg-green-600');
+            }, 2000);
+          } catch (err) {
+            console.error('Failed to copy:', err);
+          }
+        });
+      });
+    }
+
+    setupCopyButtons();
+  })();</script>   <!-- Scroll to Top Button --> <button id="scroll-to-top" class="fixed bottom-6 right-6 z-50 group p-3 bg-gradient-to-br from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white rounded-full shadow-lg shadow-sky-500/30 opacity-0 invisible translate-y-4 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-sky-500/40 active:scale-95" aria-label="Scroll to top"> <svg class="w-5 h-5 transition-transform group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path> </svg> <!-- Ripple effect ring --> <span class="absolute inset-0 rounded-full border-2 border-sky-400/50 animate-ping opacity-0 group-hover:opacity-100"></span> </button> <script>
+      // Loading Screen
+      function hideLoadingScreen() {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen) {
+          loadingScreen.style.opacity = '0';
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+          }, 500);
+        }
+      }
+
+      // Hide loading when page is fully loaded
+      window.addEventListener('load', hideLoadingScreen);
+
+      // Also hide after view transitions
+      document.addEventListener('astro:page-load', hideLoadingScreen);
+
+      // Scroll to Top Button
+      function setupScrollToTop() {
+        const scrollBtn = document.getElementById('scroll-to-top');
+        if (!scrollBtn) return;
+
+        // Show/hide button based on scroll position
+        function toggleScrollButton() {
+          if (window.scrollY > 300) {
+            scrollBtn.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+            scrollBtn.classList.add('opacity-100', 'visible', 'translate-y-0');
+          } else {
+            scrollBtn.classList.add('opacity-0', 'invisible', 'translate-y-4');
+            scrollBtn.classList.remove('opacity-100', 'visible', 'translate-y-0');
+          }
+        }
+
+        // Scroll to top when clicked
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', toggleScrollButton, { passive: true });
+
+        // Initial check
+        toggleScrollButton();
+      }
+
+      // Setup on load
+      document.addEventListener('DOMContentLoaded', setupScrollToTop);
+      document.addEventListener('astro:after-swap', setupScrollToTop);
+    </script> </body> </html>

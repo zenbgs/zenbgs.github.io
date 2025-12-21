@@ -1,0 +1,742 @@
+<!DOCTYPE html><html lang="id"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Primary Meta Tags --><title>Projek - Zain Bagus</title><meta name="title" content="Projek - Zain Bagus"><meta name="description" content="Zain Bagus - DevOps Engineer, Cloud Enthusiast &#38; Full Stack Developer dari Indonesia. Passionate dalam mengembangkan teknologi dan memecahkan masalah."><meta name="author" content="Zain Bagus"><meta name="keywords" content="DevOps, Cloud Engineer, Full Stack Developer, Web Developer, Indonesia, Malang, React, Node.js, Docker, Kubernetes"><link rel="canonical" href="https://zenbgs.github.io/projects/"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://zenbgs.github.io/projects/"><meta property="og:title" content="Projek - Zain Bagus"><meta property="og:description" content="Zain Bagus - DevOps Engineer, Cloud Enthusiast &#38; Full Stack Developer dari Indonesia. Passionate dalam mengembangkan teknologi dan memecahkan masalah."><meta property="og:image" content="https://zenbgs.github.io/images/profile-new.png"><meta property="og:site_name" content="Zain Bagus Portfolio"><meta property="og:locale" content="id_ID"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://zenbgs.github.io/projects/"><meta property="twitter:title" content="Projek - Zain Bagus"><meta property="twitter:description" content="Zain Bagus - DevOps Engineer, Cloud Enthusiast &#38; Full Stack Developer dari Indonesia. Passionate dalam mengembangkan teknologi dan memecahkan masalah."><meta property="twitter:image" content="https://zenbgs.github.io/images/profile-new.png"><!-- Favicon --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg"><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.QW52Ox2j.js"></script><script>
+      // Apply theme immediately to prevent flash
+      function applyTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      }
+
+      // Apply on initial load
+      applyTheme();
+
+      // Apply after view transition swap
+      document.addEventListener('astro:after-swap', applyTheme);
+
+      // Theme toggle handler
+      function handleThemeToggle() {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      }
+
+      // Setup click listener (using event delegation for persistence)
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('#theme-toggle')) {
+          handleThemeToggle();
+        }
+      });
+
+      // Scroll Animation Observer
+      function setupScrollAnimations() {
+        const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-slide-left, .animate-slide-right, .animate-scale');
+
+        if (animatedElements.length === 0) return;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Element masuk viewport - tampilkan animasi
+              entry.target.classList.add('is-visible');
+            } else {
+              // Element keluar viewport - reset animasi agar bisa muncul lagi
+              entry.target.classList.remove('is-visible');
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        animatedElements.forEach((el) => observer.observe(el));
+      }
+
+      // Setup on initial load
+      document.addEventListener('DOMContentLoaded', setupScrollAnimations);
+
+      // Re-setup after view transitions
+      document.addEventListener('astro:after-swap', setupScrollAnimations);
+    </script><link rel="stylesheet" href="/_astro/dashboard.CvYvDYIE.css">
+<link rel="stylesheet" href="/_astro/index.OC1Rwqj4.css">
+<style>.dracula{--tw-bg-opacity: 1}.dracula .bg-white,.dracula .dark\:bg-slate-800{background-color:#44475a!important}.dracula .bg-stone-50,.dracula .dark\:bg-slate-900{background-color:#282a36!important}.dracula .text-purple-600,.dracula .dark\:text-purple-400{color:#ff79c6!important}.dracula .bg-purple-500{background-color:#bd93f9!important}.dracula .text-sky-600,.dracula .dark\:text-sky-400{color:#8be9fd!important}.nord .bg-white,.nord .dark\:bg-slate-800{background-color:#3b4252!important}.nord .bg-stone-50,.nord .dark\:bg-slate-900{background-color:#2e3440!important}.nord .text-purple-600,.nord .dark\:text-purple-400{color:#b48ead!important}.nord .bg-purple-500,.nord .bg-sky-500{background-color:#88c0d0!important}.nord .text-sky-600,.nord .dark\:text-sky-400{color:#88c0d0!important}.solarized .bg-white,.solarized .dark\:bg-slate-800{background-color:#073642!important}.solarized .bg-stone-50,.solarized .dark\:bg-slate-900{background-color:#002b36!important}.solarized .text-purple-600,.solarized .dark\:text-purple-400{color:#d33682!important}.solarized .bg-purple-500,.solarized .bg-sky-500{background-color:#2aa198!important}.solarized .text-sky-600,.solarized .dark\:text-sky-400{color:#2aa198!important}.synthwave .bg-white,.synthwave .dark\:bg-slate-800{background-color:#16213e!important}.synthwave .bg-stone-50,.synthwave .dark\:bg-slate-900{background-color:#1a1a2e!important}.synthwave .text-purple-600,.synthwave .dark\:text-purple-400{color:#ff006e!important}.synthwave .bg-purple-500,.synthwave .bg-sky-500{background-color:#ff006e!important}.synthwave .text-sky-600,.synthwave .dark\:text-sky-400{color:#00f5d4!important}.synthwave .from-sky-500{--tw-gradient-from: #ff006e !important}.synthwave .to-purple-600{--tw-gradient-to: #8338ec !important}
+.text-reveal{position:relative}.text-reveal-word,.text-reveal-char,.text-reveal-line{display:inline-block;opacity:0;transition-property:opacity,transform,filter;transition-timing-function:cubic-bezier(.4,0,.2,1)}.text-reveal-words .text-reveal-word{transform:translateY(20px)}.text-reveal-words.is-revealed .text-reveal-word{opacity:1;transform:translateY(0)}.text-reveal-chars .text-reveal-char{transform:translateY(30px) rotateX(-90deg);transform-origin:center bottom}.text-reveal-chars.is-revealed .text-reveal-char{opacity:1;transform:translateY(0) rotateX(0)}.text-reveal-lines .text-reveal-line{transform:translateY(100%)}.text-reveal-lines .text-reveal-line-wrapper{overflow:hidden;display:block}.text-reveal-lines.is-revealed .text-reveal-line{opacity:1;transform:translateY(0)}.text-reveal-fade-up{opacity:0;transform:translateY(40px);transition-property:opacity,transform;transition-timing-function:cubic-bezier(.4,0,.2,1)}.text-reveal-fade-up.is-revealed{opacity:1;transform:translateY(0)}.text-reveal-fade-slide{opacity:0;transform:translate(-30px);transition-property:opacity,transform;transition-timing-function:cubic-bezier(.4,0,.2,1)}.text-reveal-fade-slide.is-revealed{opacity:1;transform:translate(0)}.text-reveal-blur{opacity:0;filter:blur(10px);transform:translateY(20px);transition-property:opacity,transform,filter;transition-timing-function:cubic-bezier(.4,0,.2,1)}.text-reveal-blur.is-revealed{opacity:1;filter:blur(0);transform:translateY(0)}.text-reveal-word+.text-reveal-word{margin-left:.25em}
+.project-preview-container[data-astro-cid-p5au2z2y]:hover .project-preview-overlay[data-astro-cid-p5au2z2y]{opacity:1;visibility:visible}.project-preview-container[data-astro-cid-p5au2z2y]:hover .project-preview-image[data-astro-cid-p5au2z2y]{opacity:0}.preview-iframe-container[data-astro-cid-p5au2z2y] iframe[data-astro-cid-p5au2z2y]{width:200%;height:200%;transform:scale(.5);transform-origin:top left;pointer-events:none;border:none}.preview-iframe-container[data-astro-cid-p5au2z2y].loaded{opacity:1}.preview-iframe-container[data-astro-cid-p5au2z2y].loaded+.preview-loading[data-astro-cid-p5au2z2y],.preview-iframe-container[data-astro-cid-p5au2z2y].loaded~.preview-loading[data-astro-cid-p5au2z2y]{display:none}
+</style></head> <body class="min-h-screen bg-stone-50 text-stone-900 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300"> <!-- Animated Gradient Background - DISABLED for performance -->  <!-- Custom Cursor - DISABLED for performance --> <!-- <CustomCursor /> --> <!-- Cursor Trail Effect - DISABLED for performance -->  <!-- Availability Status Floating --> <div class="availability-floating fixed bottom-6 left-4 sm:left-auto sm:right-6 sm:bottom-24 z-40 group " data-astro-cid-zrp537uf><div class="flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 cursor-pointer bg-emerald-500/90 text-white hover:bg-emerald-600/90" data-astro-cid-zrp537uf><span class="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5" data-astro-cid-zrp537uf><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" data-astro-cid-zrp537uf></span><span class="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-white" data-astro-cid-zrp537uf></span></span><span class="text-xs sm:text-sm font-medium whitespace-nowrap" data-astro-cid-zrp537uf>Available for Hire</span></div><!-- Tooltip on hover - hidden on mobile --><div class="hidden sm:block absolute bottom-full right-0 mb-2 w-64 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0" data-astro-cid-zrp537uf><p class="text-sm text-stone-600 dark:text-slate-300 mb-3" data-astro-cid-zrp537uf>I&#39;m currently open to new projects and opportunities. Let&#39;s discuss your ideas!</p><a href="/contact" class="inline-flex items-center gap-2 text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300" data-astro-cid-zrp537uf>Get in Touch<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-zrp537uf><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" data-astro-cid-zrp537uf></path></svg></a></div></div> <!-- Loading Screen --> <div id="loading-screen" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white dark:bg-slate-900 transition-opacity duration-500"> <div class="flex flex-col items-center gap-4"> <!-- Branded Logo --> <div class="relative"> <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center shadow-lg shadow-sky-500/30 animate-pulse"> <span class="text-white font-bold text-2xl">ZB</span> </div> <!-- Rotating ring around logo --> <div class="absolute -inset-2 rounded-3xl border-2 border-dashed border-sky-400/50 animate-spin" style="animation-duration: 3s;"></div> </div> <!-- Loading dots --> <div class="flex items-center gap-1.5 mt-2"> <div class="w-2 h-2 rounded-full bg-sky-500 animate-bounce" style="animation-delay: 0ms;"></div> <div class="w-2 h-2 rounded-full bg-sky-500 animate-bounce" style="animation-delay: 150ms;"></div> <div class="w-2 h-2 rounded-full bg-sky-500 animate-bounce" style="animation-delay: 300ms;"></div> </div> <p class="text-sm font-medium text-stone-500 dark:text-slate-400">Memuat...</p> </div> </div>  <div class="relative flex min-h-screen flex-col"> <!-- Background with subtle image --> <div class="fixed top-0 left-0 -z-40 h-screen w-full page-bg-img"></div> <div class="fixed top-0 left-0 -z-30 h-screen w-full page-bg-img-overlay"></div> <nav class="fixed top-0 z-50 w-full p-3 pb-0"> <div class="relative mx-auto max-w-max min-w-0 p-1.5 font-semibold"> <div class="absolute top-0 left-0 -z-10 h-full w-full rounded-2xl bg-stone-100/85 shadow-md backdrop-blur-sm dark:bg-slate-800/85"></div> <div class="flex items-center gap-x-1"> <!-- Logo --> <a href="/" aria-label="Home" class="ml-3 size-8 shrink-0 rounded-xl bg-white overflow-hidden outline-2 outline-stone-500 dark:outline-slate-300 outline-offset-2"> <div class="size-full bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">
+ZB
+</div> </a> <!-- Nav Links - Desktop --> <div class="hidden md:flex grow items-center gap-x-1 overflow-x-auto text-nowrap"> <a href="/" class="rounded-xl px-4 py-1.5 transition-colors bg-transparent hover:bg-stone-100 dark:hover:bg-slate-700"> Home </a><a href="/blogs" class="rounded-xl px-4 py-1.5 transition-colors bg-transparent hover:bg-stone-100 dark:hover:bg-slate-700"> Blog </a><a href="/projects" class="rounded-xl px-4 py-1.5 transition-colors bg-stone-200 dark:bg-slate-700"> Projek </a><a href="/services" class="rounded-xl px-4 py-1.5 transition-colors bg-transparent hover:bg-stone-100 dark:hover:bg-slate-700"> Skill </a><a href="/contact" class="rounded-xl px-4 py-1.5 transition-colors bg-transparent hover:bg-stone-100 dark:hover:bg-slate-700"> Kontak </a> </div> <!-- Mobile Menu Button --> <button id="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false" class="md:hidden size-9 shrink-0 flex justify-center items-center rounded-xl hover:bg-stone-200 dark:hover:bg-slate-700 transition-colors ml-2"> <!-- Hamburger Icon --> <svg id="hamburger-icon" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> <!-- Close Icon --> <svg id="close-icon" class="size-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path> </svg> </button> <!-- Theme Switcher --> <div class="theme-switcher relative " data-variant="dropdown"> <!-- Dropdown Variant -->
+    <button id="theme-toggle-btn" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-stone-100 dark:bg-slate-800 hover:bg-stone-200 dark:hover:bg-slate-700 transition-all" aria-label="Change theme"> <span id="current-theme-icon" class="text-lg">☀️</span> <span id="current-theme-name" class="text-sm font-medium hidden sm:inline">Light</span> <svg class="w-4 h-4 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> </svg> </button>
+
+    <!-- Dropdown Menu -->
+    <div id="theme-dropdown" class="absolute right-0 top-full mt-2 w-48 py-2 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-stone-200 dark:border-slate-700 opacity-0 invisible translate-y-2 transition-all z-50"> <div class="px-3 py-2 text-xs font-semibold text-stone-400 dark:text-slate-500 uppercase tracking-wider">
+Pilih Tema
+</div> <button class="theme-option w-full flex items-center gap-3 px-3 py-2 hover:bg-stone-100 dark:hover:bg-slate-700 transition-colors text-left" data-theme="light"> <span class="text-lg">☀️</span> <span class="text-sm font-medium">Light</span> <span class="theme-check ml-auto opacity-0"> <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> </span> </button><button class="theme-option w-full flex items-center gap-3 px-3 py-2 hover:bg-stone-100 dark:hover:bg-slate-700 transition-colors text-left" data-theme="dark"> <span class="text-lg">🌙</span> <span class="text-sm font-medium">Dark</span> <span class="theme-check ml-auto opacity-0"> <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> </span> </button><button class="theme-option w-full flex items-center gap-3 px-3 py-2 hover:bg-stone-100 dark:hover:bg-slate-700 transition-colors text-left" data-theme="dracula"> <span class="text-lg">🧛</span> <span class="text-sm font-medium">Dracula</span> <span class="theme-check ml-auto opacity-0"> <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> </span> </button><button class="theme-option w-full flex items-center gap-3 px-3 py-2 hover:bg-stone-100 dark:hover:bg-slate-700 transition-colors text-left" data-theme="nord"> <span class="text-lg">❄️</span> <span class="text-sm font-medium">Nord</span> <span class="theme-check ml-auto opacity-0"> <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> </span> </button><button class="theme-option w-full flex items-center gap-3 px-3 py-2 hover:bg-stone-100 dark:hover:bg-slate-700 transition-colors text-left" data-theme="solarized"> <span class="text-lg">🌅</span> <span class="text-sm font-medium">Solarized</span> <span class="theme-check ml-auto opacity-0"> <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> </span> </button><button class="theme-option w-full flex items-center gap-3 px-3 py-2 hover:bg-stone-100 dark:hover:bg-slate-700 transition-colors text-left" data-theme="synthwave"> <span class="text-lg">🌆</span> <span class="text-sm font-medium">Synthwave</span> <span class="theme-check ml-auto opacity-0"> <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> </span> </button> <!-- Preview colors --> <div class="mx-3 mt-2 pt-2 border-t border-stone-200 dark:border-slate-700"> <div class="flex gap-1" id="theme-preview-colors"> <span class="w-4 h-4 rounded-full" style="background: #0ea5e9"></span> <span class="w-4 h-4 rounded-full" style="background: #8b5cf6"></span> <span class="w-4 h-4 rounded-full" style="background: #fafaf9"></span> <span class="w-4 h-4 rounded-full" style="background: #1c1917"></span> </div> </div> </div> </div> <script>(function(){const themes = [{"id":"light","name":"Light","icon":"☀️","colors":{"bg":"#fafaf9","bgSecondary":"#ffffff","text":"#1c1917","textSecondary":"#78716c","primary":"#0ea5e9","accent":"#8b5cf6"}},{"id":"dark","name":"Dark","icon":"🌙","colors":{"bg":"#0f172a","bgSecondary":"#1e293b","text":"#f1f5f9","textSecondary":"#94a3b8","primary":"#0ea5e9","accent":"#8b5cf6"}},{"id":"dracula","name":"Dracula","icon":"🧛","colors":{"bg":"#282a36","bgSecondary":"#44475a","text":"#f8f8f2","textSecondary":"#6272a4","primary":"#ff79c6","accent":"#bd93f9"}},{"id":"nord","name":"Nord","icon":"❄️","colors":{"bg":"#2e3440","bgSecondary":"#3b4252","text":"#eceff4","textSecondary":"#d8dee9","primary":"#88c0d0","accent":"#81a1c1"}},{"id":"solarized","name":"Solarized","icon":"🌅","colors":{"bg":"#002b36","bgSecondary":"#073642","text":"#839496","textSecondary":"#586e75","primary":"#2aa198","accent":"#268bd2"}},{"id":"synthwave","name":"Synthwave","icon":"🌆","colors":{"bg":"#1a1a2e","bgSecondary":"#16213e","text":"#eee","textSecondary":"#a29bfe","primary":"#ff006e","accent":"#8338ec"}}];
+
+  function setupThemeSwitcher() {
+    const root = document.documentElement;
+    const toggleBtn = document.getElementById('theme-toggle-btn');
+    const dropdown = document.getElementById('theme-dropdown');
+    const currentIcon = document.getElementById('current-theme-icon');
+    const currentName = document.getElementById('current-theme-name');
+    const themeOptions = document.querySelectorAll('.theme-option');
+    const previewColors = document.getElementById('theme-preview-colors');
+
+    // Get saved theme or default
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+
+    function applyTheme(themeId) {
+      const theme = themes.find(t => t.id === themeId);
+      if (!theme) return;
+
+      // Remove all theme classes
+      root.classList.remove('light', 'dark', 'dracula', 'nord', 'solarized', 'synthwave');
+
+      // Add appropriate class
+      if (themeId === 'light') {
+        root.classList.remove('dark');
+      } else {
+        root.classList.add('dark');
+        root.classList.add(themeId);
+      }
+
+      // Apply CSS variables
+      root.style.setProperty('--theme-bg', theme.colors.bg);
+      root.style.setProperty('--theme-bg-secondary', theme.colors.bgSecondary);
+      root.style.setProperty('--theme-text', theme.colors.text);
+      root.style.setProperty('--theme-text-secondary', theme.colors.textSecondary);
+      root.style.setProperty('--theme-primary', theme.colors.primary);
+      root.style.setProperty('--theme-accent', theme.colors.accent);
+
+      // Update UI
+      if (currentIcon) currentIcon.textContent = theme.icon;
+      if (currentName) currentName.textContent = theme.name;
+
+      // Update checkmarks
+      themeOptions.forEach(opt => {
+        const check = opt.querySelector('.theme-check');
+        const isActive = opt.dataset.theme === themeId;
+        if (check) {
+          check.style.opacity = isActive ? '1' : '0';
+        }
+        opt.classList.toggle('border-sky-500', isActive);
+        opt.classList.toggle('border-transparent', !isActive);
+      });
+
+      // Update preview colors
+      if (previewColors) {
+        previewColors.innerHTML = `
+          <span class="w-4 h-4 rounded-full" style="background: ${theme.colors.primary}"></span>
+          <span class="w-4 h-4 rounded-full" style="background: ${theme.colors.accent}"></span>
+          <span class="w-4 h-4 rounded-full" style="background: ${theme.colors.bg}"></span>
+          <span class="w-4 h-4 rounded-full" style="background: ${theme.colors.text}"></span>
+        `;
+      }
+
+      // Save to localStorage
+      localStorage.setItem('portfolio-theme', themeId);
+    }
+
+    // Toggle dropdown
+    toggleBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown?.classList.contains('opacity-100');
+
+      if (isOpen) {
+        dropdown?.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        dropdown?.classList.add('opacity-0', 'invisible', 'translate-y-2');
+      } else {
+        dropdown?.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        dropdown?.classList.add('opacity-100', 'visible', 'translate-y-0');
+      }
+    });
+
+    // Close dropdown on outside click
+    document.addEventListener('click', () => {
+      dropdown?.classList.remove('opacity-100', 'visible', 'translate-y-0');
+      dropdown?.classList.add('opacity-0', 'invisible', 'translate-y-2');
+    });
+
+    // Theme option click
+    themeOptions.forEach(opt => {
+      opt.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const themeId = opt.dataset.theme;
+        applyTheme(themeId);
+
+        // Close dropdown
+        dropdown?.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        dropdown?.classList.add('opacity-0', 'invisible', 'translate-y-2');
+      });
+    });
+
+    // Apply saved theme on load
+    applyTheme(savedTheme);
+  }
+
+  document.addEventListener('DOMContentLoaded', setupThemeSwitcher);
+  document.addEventListener('astro:after-swap', setupThemeSwitcher);
+})();</script>  </div> </div> <!-- Mobile Menu Dropdown --> <div id="mobile-menu" class="md:hidden absolute left-3 right-3 top-full mt-2 rounded-2xl bg-stone-100/95 shadow-lg backdrop-blur-sm dark:bg-slate-800/95 overflow-hidden transition-all duration-300 ease-out opacity-0 -translate-y-2 pointer-events-none"> <div class="flex flex-col p-2"> <a href="/" class="rounded-xl px-4 py-3 transition-colors font-semibold hover:bg-stone-200 dark:hover:bg-slate-700"> Home </a><a href="/blogs" class="rounded-xl px-4 py-3 transition-colors font-semibold hover:bg-stone-200 dark:hover:bg-slate-700"> Blog </a><a href="/projects" class="rounded-xl px-4 py-3 transition-colors font-semibold bg-stone-200 dark:bg-slate-700"> Projek </a><a href="/services" class="rounded-xl px-4 py-3 transition-colors font-semibold hover:bg-stone-200 dark:hover:bg-slate-700"> Skill </a><a href="/contact" class="rounded-xl px-4 py-3 transition-colors font-semibold hover:bg-stone-200 dark:hover:bg-slate-700"> Kontak </a> </div> </div> </nav> <!-- Scroll Progress Indicator --> <div id="scroll-progress" class="fixed top-0 left-0 z-[60] h-1 bg-gradient-to-r from-sky-500 to-blue-600 w-0 transition-none"></div> <script type="module">function c(){const t=document.getElementById("mobile-menu-btn"),e=document.getElementById("mobile-menu"),o=document.getElementById("hamburger-icon"),s=document.getElementById("close-icon");if(!t||!e||!o||!s)return;let n=!1;function d(){n=!n,t.setAttribute("aria-expanded",String(n)),n?(e.classList.remove("opacity-0","-translate-y-2","pointer-events-none"),e.classList.add("opacity-100","translate-y-0","pointer-events-auto"),o.classList.add("hidden"),s.classList.remove("hidden")):(e.classList.add("opacity-0","-translate-y-2","pointer-events-none"),e.classList.remove("opacity-100","translate-y-0","pointer-events-auto"),o.classList.remove("hidden"),s.classList.add("hidden"))}function a(){n&&(n=!1,t.setAttribute("aria-expanded","false"),e.classList.add("opacity-0","-translate-y-2","pointer-events-none"),e.classList.remove("opacity-100","translate-y-0","pointer-events-auto"),o.classList.remove("hidden"),s.classList.add("hidden"))}t.addEventListener("click",d),document.addEventListener("click",i=>{!t.contains(i.target)&&!e.contains(i.target)&&a()}),document.addEventListener("keydown",i=>{i.key==="Escape"&&a()}),e.querySelectorAll("a").forEach(i=>{i.addEventListener("click",a)})}c();document.addEventListener("astro:after-swap",c);function r(){const t=document.getElementById("scroll-progress");if(!t)return;function e(){const o=window.scrollY,s=document.documentElement.scrollHeight-window.innerHeight,n=s>0?o/s*100:0;t.style.width=`${n}%`}window.addEventListener("scroll",e,{passive:!0}),e()}r();document.addEventListener("astro:after-swap",r);</script> <main class="flex grow flex-col pt-16"> <!-- Header with background image --> <header class="relative mx-auto h-48 w-full max-w-5xl overflow-hidden"> <div class="absolute h-full w-full header-bg-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=400&fit=crop');"></div> <div class="absolute h-full w-full bg-gradient-to-r from-green-500/80 to-teal-600/80"></div> <div class="absolute inset-0 bg-gradient-to-t from-white/95 to-white/30 dark:from-slate-900/90 dark:to-slate-900/25"></div> <h1 class="absolute bottom-0 left-1/2 w-max -translate-x-1/2 rounded-t-3xl bg-white px-6 py-3 pb-0 text-center text-2xl font-bold sm:text-3xl dark:bg-slate-900">
+PROJEK
+</h1> </header> <!-- Content --> <section class="my-12 w-full max-w-5xl self-center px-4"> <p class="text-reveal text-reveal-fade-up text-center text-stone-600 dark:text-slate-400 mb-8" data-variant="fade-up" data-stagger="50" data-duration="600" data-threshold="0.2" data-once="true">
+Koleksi projek yang saya bangun untuk memecahkan masalah nyata dan mempelajari teknologi baru.
+</p>  <script>
+  function setupTextReveal() {
+    const elements = document.querySelectorAll('.text-reveal:not([data-initialized])');
+
+    elements.forEach(el => {
+      el.dataset.initialized = 'true';
+
+      const variant = el.dataset.variant || 'words';
+      const stagger = parseInt(el.dataset.stagger) || 50;
+      const duration = parseInt(el.dataset.duration) || 600;
+      const threshold = parseFloat(el.dataset.threshold) || 0.2;
+      const once = el.dataset.once !== 'false';
+
+      // Process text based on variant
+      if (variant === 'words' || variant === 'chars') {
+        const text = el.textContent.trim();
+        el.textContent = '';
+
+        if (variant === 'words') {
+          const words = text.split(/\s+/);
+          words.forEach((word, i) => {
+            const span = document.createElement('span');
+            span.className = 'text-reveal-word';
+            span.textContent = word;
+            span.style.transitionDuration = `${duration}ms`;
+            span.style.transitionDelay = `${i * stagger}ms`;
+            el.appendChild(span);
+          });
+        } else if (variant === 'chars') {
+          const chars = text.split('');
+          chars.forEach((char, i) => {
+            const span = document.createElement('span');
+            span.className = 'text-reveal-char';
+            span.textContent = char === ' ' ? '\u00A0' : char;
+            span.style.transitionDuration = `${duration}ms`;
+            span.style.transitionDelay = `${i * stagger}ms`;
+            el.appendChild(span);
+          });
+        }
+      } else if (variant === 'lines') {
+        const text = el.innerHTML;
+        const lines = text.split(/<br\s*\/?>/i);
+        el.innerHTML = '';
+
+        lines.forEach((line, i) => {
+          const wrapper = document.createElement('span');
+          wrapper.className = 'text-reveal-line-wrapper';
+
+          const lineSpan = document.createElement('span');
+          lineSpan.className = 'text-reveal-line';
+          lineSpan.innerHTML = line;
+          lineSpan.style.transitionDuration = `${duration}ms`;
+          lineSpan.style.transitionDelay = `${i * stagger}ms`;
+
+          wrapper.appendChild(lineSpan);
+          el.appendChild(wrapper);
+        });
+      } else {
+        // Simple variants (fade-up, fade-slide, blur)
+        el.style.transitionDuration = `${duration}ms`;
+      }
+
+      // Create observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            el.classList.add('is-revealed');
+            if (once) {
+              observer.unobserve(el);
+            }
+          } else if (!once) {
+            el.classList.remove('is-revealed');
+          }
+        });
+      }, {
+        threshold: threshold,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      observer.observe(el);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupTextReveal);
+  document.addEventListener('astro:after-swap', setupTextReveal);
+</script> <!-- Search & Filter --> <div class="mb-8 space-y-4"> <!-- Search Bar --> <div class="relative"> <input type="text" id="project-search" placeholder="Cari projek..." class="w-full px-4 py-3 pl-12 rounded-xl border-2 border-stone-200 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-green-500/20 focus:border-green-500 outline-none transition-all"> <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path> </svg> </div> <!-- Category Filter --> <div class="flex flex-wrap gap-2"> <button data-category-filter="Semua" class="px-4 py-2 rounded-full text-sm font-medium transition-all bg-green-500 text-white"> Semua </button><button data-category-filter="Frontend" class="px-4 py-2 rounded-full text-sm font-medium transition-all bg-stone-200 dark:bg-slate-700 hover:bg-stone-300 dark:hover:bg-slate-600"> Frontend </button><button data-category-filter="Full Stack" class="px-4 py-2 rounded-full text-sm font-medium transition-all bg-stone-200 dark:bg-slate-700 hover:bg-stone-300 dark:hover:bg-slate-600"> Full Stack </button> </div> </div> <!-- Featured Projects --> <h2 class="text-reveal text-reveal-words text-2xl font-bold mb-6" data-variant="words" data-stagger="50" data-duration="600" data-threshold="0.2" data-once="true">Projek Unggulan</h2>  <script>
+  function setupTextReveal() {
+    const elements = document.querySelectorAll('.text-reveal:not([data-initialized])');
+
+    elements.forEach(el => {
+      el.dataset.initialized = 'true';
+
+      const variant = el.dataset.variant || 'words';
+      const stagger = parseInt(el.dataset.stagger) || 50;
+      const duration = parseInt(el.dataset.duration) || 600;
+      const threshold = parseFloat(el.dataset.threshold) || 0.2;
+      const once = el.dataset.once !== 'false';
+
+      // Process text based on variant
+      if (variant === 'words' || variant === 'chars') {
+        const text = el.textContent.trim();
+        el.textContent = '';
+
+        if (variant === 'words') {
+          const words = text.split(/\s+/);
+          words.forEach((word, i) => {
+            const span = document.createElement('span');
+            span.className = 'text-reveal-word';
+            span.textContent = word;
+            span.style.transitionDuration = `${duration}ms`;
+            span.style.transitionDelay = `${i * stagger}ms`;
+            el.appendChild(span);
+          });
+        } else if (variant === 'chars') {
+          const chars = text.split('');
+          chars.forEach((char, i) => {
+            const span = document.createElement('span');
+            span.className = 'text-reveal-char';
+            span.textContent = char === ' ' ? '\u00A0' : char;
+            span.style.transitionDuration = `${duration}ms`;
+            span.style.transitionDelay = `${i * stagger}ms`;
+            el.appendChild(span);
+          });
+        }
+      } else if (variant === 'lines') {
+        const text = el.innerHTML;
+        const lines = text.split(/<br\s*\/?>/i);
+        el.innerHTML = '';
+
+        lines.forEach((line, i) => {
+          const wrapper = document.createElement('span');
+          wrapper.className = 'text-reveal-line-wrapper';
+
+          const lineSpan = document.createElement('span');
+          lineSpan.className = 'text-reveal-line';
+          lineSpan.innerHTML = line;
+          lineSpan.style.transitionDuration = `${duration}ms`;
+          lineSpan.style.transitionDelay = `${i * stagger}ms`;
+
+          wrapper.appendChild(lineSpan);
+          el.appendChild(wrapper);
+        });
+      } else {
+        // Simple variants (fade-up, fade-slide, blur)
+        el.style.transitionDuration = `${duration}ms`;
+      }
+
+      // Create observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            el.classList.add('is-revealed');
+            if (once) {
+              observer.unobserve(el);
+            }
+          } else if (!once) {
+            el.classList.remove('is-revealed');
+          }
+        });
+      }, {
+        threshold: threshold,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      observer.observe(el);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupTextReveal);
+  document.addEventListener('astro:after-swap', setupTextReveal);
+</script> <div id="featured-projects" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 stagger-children"> <div class="animate-on-scroll project-card group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300" data-title="indotechpren" data-category="Frontend" data-tech="html5,css3,javascript,bootstrap"> <!-- Image Container with Live Preview --> <div class="relative h-48 overflow-hidden"> <div class="project-preview-container relative w-full h-full" data-preview-url="https://zenbgs.github.io/resource/indotechpren/" data-astro-cid-p5au2z2y> <!-- Default Image --> <img src="/images/indotechpren_1.png" alt="IndoTechPren" class="project-preview-image w-full h-full object-cover transition-opacity duration-300" data-astro-cid-p5au2z2y> <!-- Preview Overlay (appears on hover) --> <div class="project-preview-overlay absolute inset-0 bg-slate-900 opacity-0 invisible transition-all duration-300" data-astro-cid-p5au2z2y> <!-- Loading Spinner --> <div class="preview-loading absolute inset-0 flex items-center justify-center bg-slate-900" data-astro-cid-p5au2z2y> <div class="flex flex-col items-center gap-3" data-astro-cid-p5au2z2y> <div class="w-8 h-8 border-3 border-sky-500 border-t-transparent rounded-full animate-spin" data-astro-cid-p5au2z2y></div> <p class="text-white/70 text-sm" data-astro-cid-p5au2z2y>Loading preview...</p> </div> </div> <!-- Iframe Container --> <div class="preview-iframe-container absolute inset-0 opacity-0 transition-opacity duration-300" data-astro-cid-p5au2z2y> <!-- Iframe will be injected here --> </div> <!-- Preview Label --> <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between" data-astro-cid-p5au2z2y> <span class="px-3 py-1.5 bg-black/50 backdrop-blur-sm text-white text-xs font-medium rounded-lg flex items-center gap-2" data-astro-cid-p5au2z2y> <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-p5au2z2y> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" data-astro-cid-p5au2z2y></path> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" data-astro-cid-p5au2z2y></path> </svg>
+Live Preview
+</span> <a href="https://zenbgs.github.io/resource/indotechpren/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-sky-500 hover:bg-sky-600 text-white text-xs font-medium rounded-lg flex items-center gap-1.5 transition-colors" onclick="event.stopPropagation();" data-astro-cid-p5au2z2y>
+Open
+<svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-p5au2z2y> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" data-astro-cid-p5au2z2y></path> </svg> </a> </div> </div> </div>  <script>
+  function setupProjectPreviews() {
+    const containers = document.querySelectorAll('.project-preview-container');
+
+    containers.forEach(container => {
+      if (container.dataset.previewInit === 'true') return;
+      container.dataset.previewInit = 'true';
+
+      const url = container.dataset.previewUrl;
+      if (!url) return;
+
+      const overlay = container.querySelector('.project-preview-overlay');
+      const iframeContainer = container.querySelector('.preview-iframe-container');
+      const loading = container.querySelector('.preview-loading');
+
+      let iframeLoaded = false;
+      let iframe = null;
+
+      // Create iframe on first hover
+      container.addEventListener('mouseenter', () => {
+        if (!iframeLoaded && iframeContainer) {
+          iframe = document.createElement('iframe');
+          iframe.src = url;
+          iframe.title = 'Project Preview';
+          iframe.setAttribute('loading', 'lazy');
+          iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin');
+
+          iframe.onload = () => {
+            iframeContainer.classList.add('loaded');
+            if (loading) loading.style.display = 'none';
+          };
+
+          iframe.onerror = () => {
+            if (loading) {
+              loading.innerHTML = `
+                <div class="flex flex-col items-center gap-2 text-white/70">
+                  <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <p class="text-xs">Preview unavailable</p>
+                </div>
+              `;
+            }
+          };
+
+          iframeContainer.appendChild(iframe);
+          iframeLoaded = true;
+        }
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupProjectPreviews);
+  document.addEventListener('astro:after-swap', setupProjectPreviews);
+</script> </div> <div class="p-6"> <a href="/projects/indotechpren" class="block"> <h3 class="text-xl font-bold mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">IndoTechPren</h3> </a> <p class="text-stone-600 dark:text-slate-400 mb-4 text-sm">Platform teknologi Indonesia untuk para tech enthusiast. Website informatif dengan desain modern dan responsif.</p> <div class="flex flex-wrap gap-2 mb-4"> <span class="px-3 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full"> HTML5 </span><span class="px-3 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full"> CSS3 </span><span class="px-3 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full"> JavaScript </span><span class="px-3 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full"> Bootstrap </span> </div> <div class="flex gap-2"> <a href="/projects/indotechpren" class="flex items-center justify-center gap-2 px-4 py-2.5 bg-green-600 text-white rounded-xl font-medium hover:bg-green-700 active:scale-[0.98] transition-all flex-1"> <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path> </svg>
+Detail
+</a> <a href="https://zenbgs.github.io/resource/indotechpren/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-2.5 bg-stone-200 dark:bg-slate-700 text-stone-800 dark:text-slate-200 rounded-xl font-medium hover:bg-stone-300 dark:hover:bg-slate-600 active:scale-[0.98] transition-all"> <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path> </svg>
+Demo
+</a> </div> </div> </div><div class="animate-on-scroll project-card group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300" data-title="capsule inn" data-category="Frontend" data-tech="html5,css3,javascript,bootstrap"> <!-- Image Container with Live Preview --> <div class="relative h-48 overflow-hidden"> <div class="project-preview-container relative w-full h-full" data-preview-url="https://zenbgs.github.io/resource/capsuleinn/" data-astro-cid-p5au2z2y> <!-- Default Image --> <img src="/images/capsuleinn_1.png" alt="Capsule Inn" class="project-preview-image w-full h-full object-cover transition-opacity duration-300" data-astro-cid-p5au2z2y> <!-- Preview Overlay (appears on hover) --> <div class="project-preview-overlay absolute inset-0 bg-slate-900 opacity-0 invisible transition-all duration-300" data-astro-cid-p5au2z2y> <!-- Loading Spinner --> <div class="preview-loading absolute inset-0 flex items-center justify-center bg-slate-900" data-astro-cid-p5au2z2y> <div class="flex flex-col items-center gap-3" data-astro-cid-p5au2z2y> <div class="w-8 h-8 border-3 border-sky-500 border-t-transparent rounded-full animate-spin" data-astro-cid-p5au2z2y></div> <p class="text-white/70 text-sm" data-astro-cid-p5au2z2y>Loading preview...</p> </div> </div> <!-- Iframe Container --> <div class="preview-iframe-container absolute inset-0 opacity-0 transition-opacity duration-300" data-astro-cid-p5au2z2y> <!-- Iframe will be injected here --> </div> <!-- Preview Label --> <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between" data-astro-cid-p5au2z2y> <span class="px-3 py-1.5 bg-black/50 backdrop-blur-sm text-white text-xs font-medium rounded-lg flex items-center gap-2" data-astro-cid-p5au2z2y> <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-p5au2z2y> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" data-astro-cid-p5au2z2y></path> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" data-astro-cid-p5au2z2y></path> </svg>
+Live Preview
+</span> <a href="https://zenbgs.github.io/resource/capsuleinn/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-sky-500 hover:bg-sky-600 text-white text-xs font-medium rounded-lg flex items-center gap-1.5 transition-colors" onclick="event.stopPropagation();" data-astro-cid-p5au2z2y>
+Open
+<svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-p5au2z2y> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" data-astro-cid-p5au2z2y></path> </svg> </a> </div> </div> </div>  <script>
+  function setupProjectPreviews() {
+    const containers = document.querySelectorAll('.project-preview-container');
+
+    containers.forEach(container => {
+      if (container.dataset.previewInit === 'true') return;
+      container.dataset.previewInit = 'true';
+
+      const url = container.dataset.previewUrl;
+      if (!url) return;
+
+      const overlay = container.querySelector('.project-preview-overlay');
+      const iframeContainer = container.querySelector('.preview-iframe-container');
+      const loading = container.querySelector('.preview-loading');
+
+      let iframeLoaded = false;
+      let iframe = null;
+
+      // Create iframe on first hover
+      container.addEventListener('mouseenter', () => {
+        if (!iframeLoaded && iframeContainer) {
+          iframe = document.createElement('iframe');
+          iframe.src = url;
+          iframe.title = 'Project Preview';
+          iframe.setAttribute('loading', 'lazy');
+          iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin');
+
+          iframe.onload = () => {
+            iframeContainer.classList.add('loaded');
+            if (loading) loading.style.display = 'none';
+          };
+
+          iframe.onerror = () => {
+            if (loading) {
+              loading.innerHTML = `
+                <div class="flex flex-col items-center gap-2 text-white/70">
+                  <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <p class="text-xs">Preview unavailable</p>
+                </div>
+              `;
+            }
+          };
+
+          iframeContainer.appendChild(iframe);
+          iframeLoaded = true;
+        }
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupProjectPreviews);
+  document.addEventListener('astro:after-swap', setupProjectPreviews);
+</script> </div> <div class="p-6"> <a href="/projects/capsuleinn" class="block"> <h3 class="text-xl font-bold mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Capsule Inn</h3> </a> <p class="text-stone-600 dark:text-slate-400 mb-4 text-sm">Website booking hotel kapsul dengan tampilan elegan dan user-friendly. Fitur reservasi dan informasi lengkap.</p> <div class="flex flex-wrap gap-2 mb-4"> <span class="px-3 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full"> HTML5 </span><span class="px-3 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full"> CSS3 </span><span class="px-3 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full"> JavaScript </span><span class="px-3 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full"> Bootstrap </span> </div> <div class="flex gap-2"> <a href="/projects/capsuleinn" class="flex items-center justify-center gap-2 px-4 py-2.5 bg-green-600 text-white rounded-xl font-medium hover:bg-green-700 active:scale-[0.98] transition-all flex-1"> <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path> </svg>
+Detail
+</a> <a href="https://zenbgs.github.io/resource/capsuleinn/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-2.5 bg-stone-200 dark:bg-slate-700 text-stone-800 dark:text-slate-200 rounded-xl font-medium hover:bg-stone-300 dark:hover:bg-slate-600 active:scale-[0.98] transition-all"> <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path> </svg>
+Demo
+</a> </div> </div> </div><div class="animate-on-scroll project-card group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300" data-title="resepsi online" data-category="Frontend" data-tech="html5,css3,javascript"> <!-- Image Container with Live Preview --> <div class="relative h-48 overflow-hidden"> <div class="project-preview-container relative w-full h-full" data-preview-url="https://zenbgs.github.io/resource/resepsi_online/" data-astro-cid-p5au2z2y> <!-- Default Image --> <img src="/images/Resepsionline.png" alt="Resepsi Online" class="project-preview-image w-full h-full object-cover transition-opacity duration-300" data-astro-cid-p5au2z2y> <!-- Preview Overlay (appears on hover) --> <div class="project-preview-overlay absolute inset-0 bg-slate-900 opacity-0 invisible transition-all duration-300" data-astro-cid-p5au2z2y> <!-- Loading Spinner --> <div class="preview-loading absolute inset-0 flex items-center justify-center bg-slate-900" data-astro-cid-p5au2z2y> <div class="flex flex-col items-center gap-3" data-astro-cid-p5au2z2y> <div class="w-8 h-8 border-3 border-sky-500 border-t-transparent rounded-full animate-spin" data-astro-cid-p5au2z2y></div> <p class="text-white/70 text-sm" data-astro-cid-p5au2z2y>Loading preview...</p> </div> </div> <!-- Iframe Container --> <div class="preview-iframe-container absolute inset-0 opacity-0 transition-opacity duration-300" data-astro-cid-p5au2z2y> <!-- Iframe will be injected here --> </div> <!-- Preview Label --> <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between" data-astro-cid-p5au2z2y> <span class="px-3 py-1.5 bg-black/50 backdrop-blur-sm text-white text-xs font-medium rounded-lg flex items-center gap-2" data-astro-cid-p5au2z2y> <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-p5au2z2y> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" data-astro-cid-p5au2z2y></path> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" data-astro-cid-p5au2z2y></path> </svg>
+Live Preview
+</span> <a href="https://zenbgs.github.io/resource/resepsi_online/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-sky-500 hover:bg-sky-600 text-white text-xs font-medium rounded-lg flex items-center gap-1.5 transition-colors" onclick="event.stopPropagation();" data-astro-cid-p5au2z2y>
+Open
+<svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-p5au2z2y> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" data-astro-cid-p5au2z2y></path> </svg> </a> </div> </div> </div>  <script>
+  function setupProjectPreviews() {
+    const containers = document.querySelectorAll('.project-preview-container');
+
+    containers.forEach(container => {
+      if (container.dataset.previewInit === 'true') return;
+      container.dataset.previewInit = 'true';
+
+      const url = container.dataset.previewUrl;
+      if (!url) return;
+
+      const overlay = container.querySelector('.project-preview-overlay');
+      const iframeContainer = container.querySelector('.preview-iframe-container');
+      const loading = container.querySelector('.preview-loading');
+
+      let iframeLoaded = false;
+      let iframe = null;
+
+      // Create iframe on first hover
+      container.addEventListener('mouseenter', () => {
+        if (!iframeLoaded && iframeContainer) {
+          iframe = document.createElement('iframe');
+          iframe.src = url;
+          iframe.title = 'Project Preview';
+          iframe.setAttribute('loading', 'lazy');
+          iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin');
+
+          iframe.onload = () => {
+            iframeContainer.classList.add('loaded');
+            if (loading) loading.style.display = 'none';
+          };
+
+          iframe.onerror = () => {
+            if (loading) {
+              loading.innerHTML = `
+                <div class="flex flex-col items-center gap-2 text-white/70">
+                  <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <p class="text-xs">Preview unavailable</p>
+                </div>
+              `;
+            }
+          };
+
+          iframeContainer.appendChild(iframe);
+          iframeLoaded = true;
+        }
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupProjectPreviews);
+  document.addEventListener('astro:after-swap', setupProjectPreviews);
+</script> </div> <div class="p-6"> <a href="/projects/resepsi-online" class="block"> <h3 class="text-xl font-bold mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Resepsi Online</h3> </a> <p class="text-stone-600 dark:text-slate-400 mb-4 text-sm">Platform undangan pernikahan digital dengan fitur RSVP, galeri foto, dan countdown. Solusi modern untuk undangan.</p> <div class="flex flex-wrap gap-2 mb-4"> <span class="px-3 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full"> HTML5 </span><span class="px-3 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full"> CSS3 </span><span class="px-3 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full"> JavaScript </span> </div> <div class="flex gap-2"> <a href="/projects/resepsi-online" class="flex items-center justify-center gap-2 px-4 py-2.5 bg-green-600 text-white rounded-xl font-medium hover:bg-green-700 active:scale-[0.98] transition-all flex-1"> <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path> </svg>
+Detail
+</a> <a href="https://zenbgs.github.io/resource/resepsi_online/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-2.5 bg-stone-200 dark:bg-slate-700 text-stone-800 dark:text-slate-200 rounded-xl font-medium hover:bg-stone-300 dark:hover:bg-slate-600 active:scale-[0.98] transition-all"> <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path> </svg>
+Demo
+</a> </div> </div> </div> </div> <!-- Other Projects --> <h2 class="text-reveal text-reveal-words text-2xl font-bold mb-6" data-variant="words" data-stagger="50" data-duration="600" data-threshold="0.2" data-once="true">Projek Lainnya</h2>  <script>
+  function setupTextReveal() {
+    const elements = document.querySelectorAll('.text-reveal:not([data-initialized])');
+
+    elements.forEach(el => {
+      el.dataset.initialized = 'true';
+
+      const variant = el.dataset.variant || 'words';
+      const stagger = parseInt(el.dataset.stagger) || 50;
+      const duration = parseInt(el.dataset.duration) || 600;
+      const threshold = parseFloat(el.dataset.threshold) || 0.2;
+      const once = el.dataset.once !== 'false';
+
+      // Process text based on variant
+      if (variant === 'words' || variant === 'chars') {
+        const text = el.textContent.trim();
+        el.textContent = '';
+
+        if (variant === 'words') {
+          const words = text.split(/\s+/);
+          words.forEach((word, i) => {
+            const span = document.createElement('span');
+            span.className = 'text-reveal-word';
+            span.textContent = word;
+            span.style.transitionDuration = `${duration}ms`;
+            span.style.transitionDelay = `${i * stagger}ms`;
+            el.appendChild(span);
+          });
+        } else if (variant === 'chars') {
+          const chars = text.split('');
+          chars.forEach((char, i) => {
+            const span = document.createElement('span');
+            span.className = 'text-reveal-char';
+            span.textContent = char === ' ' ? '\u00A0' : char;
+            span.style.transitionDuration = `${duration}ms`;
+            span.style.transitionDelay = `${i * stagger}ms`;
+            el.appendChild(span);
+          });
+        }
+      } else if (variant === 'lines') {
+        const text = el.innerHTML;
+        const lines = text.split(/<br\s*\/?>/i);
+        el.innerHTML = '';
+
+        lines.forEach((line, i) => {
+          const wrapper = document.createElement('span');
+          wrapper.className = 'text-reveal-line-wrapper';
+
+          const lineSpan = document.createElement('span');
+          lineSpan.className = 'text-reveal-line';
+          lineSpan.innerHTML = line;
+          lineSpan.style.transitionDuration = `${duration}ms`;
+          lineSpan.style.transitionDelay = `${i * stagger}ms`;
+
+          wrapper.appendChild(lineSpan);
+          el.appendChild(wrapper);
+        });
+      } else {
+        // Simple variants (fade-up, fade-slide, blur)
+        el.style.transitionDuration = `${duration}ms`;
+      }
+
+      // Create observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            el.classList.add('is-revealed');
+            if (once) {
+              observer.unobserve(el);
+            }
+          } else if (!once) {
+            el.classList.remove('is-revealed');
+          }
+        });
+      }, {
+        threshold: threshold,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      observer.observe(el);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupTextReveal);
+  document.addEventListener('astro:after-swap', setupTextReveal);
+</script> <div id="other-projects" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children"> <a href="/projects/arsha-landing" class="animate-on-scroll project-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 block" data-title="arsha landing page" data-category="Frontend" data-tech="html5,css3,bootstrap,javascript"> <!-- Image Container --> <div class="relative h-32 overflow-hidden"> <img src="/images/arsha.png" alt="Arsha Landing Page" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"> <!-- Subtle Overlay --> <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> </div> <div class="p-4"> <h3 class="font-bold mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Arsha Landing Page</h3> <p class="text-sm text-stone-600 dark:text-slate-400 mb-3">Landing page modern untuk startup teknologi dengan desain clean dan profesional.</p> <div class="flex flex-wrap gap-1 mb-3"> <span class="px-2 py-0.5 text-xs bg-stone-100 dark:bg-slate-700 rounded"> HTML5 </span><span class="px-2 py-0.5 text-xs bg-stone-100 dark:bg-slate-700 rounded"> CSS3 </span><span class="px-2 py-0.5 text-xs bg-stone-100 dark:bg-slate-700 rounded"> Bootstrap </span> </div> <span class="text-green-600 dark:text-green-400 text-sm font-medium flex items-center gap-1"> <span class="group-hover:underline">Lihat Detail</span> <svg class="size-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> </svg> </span> </div> </a><a href="/projects/ponpes-website" class="animate-on-scroll project-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 block" data-title="ponpes website" data-category="Frontend" data-tech="html5,css3,bootstrap"> <!-- Image Container --> <div class="relative h-32 overflow-hidden"> <img src="/images/ponpes.png" alt="Ponpes Website" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"> <!-- Subtle Overlay --> <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> </div> <div class="p-4"> <h3 class="font-bold mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Ponpes Website</h3> <p class="text-sm text-stone-600 dark:text-slate-400 mb-3">Website informasi pondok pesantren dengan fitur lengkap untuk informasi pendaftaran dan kegiatan.</p> <div class="flex flex-wrap gap-1 mb-3"> <span class="px-2 py-0.5 text-xs bg-stone-100 dark:bg-slate-700 rounded"> HTML5 </span><span class="px-2 py-0.5 text-xs bg-stone-100 dark:bg-slate-700 rounded"> CSS3 </span><span class="px-2 py-0.5 text-xs bg-stone-100 dark:bg-slate-700 rounded"> Bootstrap </span> </div> <span class="text-green-600 dark:text-green-400 text-sm font-medium flex items-center gap-1"> <span class="group-hover:underline">Lihat Detail</span> <svg class="size-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> </svg> </span> </div> </a><a href="/projects/portfolio-mobile" class="animate-on-scroll project-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 block" data-title="portfolio mobile" data-category="Frontend" data-tech="html5,css3,javascript"> <!-- Image Container --> <div class="relative h-32 overflow-hidden"> <img src="/images/mobileporto.png" alt="Portfolio Mobile" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"> <!-- Subtle Overlay --> <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> </div> <div class="p-4"> <h3 class="font-bold mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Portfolio Mobile</h3> <p class="text-sm text-stone-600 dark:text-slate-400 mb-3">Portfolio website dengan tampilan mobile-first design yang responsif di semua device.</p> <div class="flex flex-wrap gap-1 mb-3"> <span class="px-2 py-0.5 text-xs bg-stone-100 dark:bg-slate-700 rounded"> HTML5 </span><span class="px-2 py-0.5 text-xs bg-stone-100 dark:bg-slate-700 rounded"> CSS3 </span><span class="px-2 py-0.5 text-xs bg-stone-100 dark:bg-slate-700 rounded"> JavaScript </span> </div> <span class="text-green-600 dark:text-green-400 text-sm font-medium flex items-center gap-1"> <span class="group-hover:underline">Lihat Detail</span> <svg class="size-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> </svg> </span> </div> </a><a href="/projects/admin-dashboard" class="animate-on-scroll project-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 block" data-title="admin dashboard" data-category="Full Stack" data-tech="php,mysql,bootstrap,chart.js"> <!-- Image Container --> <div class="relative h-32 overflow-hidden"> <img src="/images/admin.png" alt="Admin Dashboard" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"> <!-- Subtle Overlay --> <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> </div> <div class="p-4"> <h3 class="font-bold mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Admin Dashboard</h3> <p class="text-sm text-stone-600 dark:text-slate-400 mb-3">Dashboard admin untuk management sistem dengan fitur CRUD dan visualisasi data.</p> <div class="flex flex-wrap gap-1 mb-3"> <span class="px-2 py-0.5 text-xs bg-stone-100 dark:bg-slate-700 rounded"> PHP </span><span class="px-2 py-0.5 text-xs bg-stone-100 dark:bg-slate-700 rounded"> MySQL </span><span class="px-2 py-0.5 text-xs bg-stone-100 dark:bg-slate-700 rounded"> Bootstrap </span> </div> <span class="text-green-600 dark:text-green-400 text-sm font-medium flex items-center gap-1"> <span class="group-hover:underline">Lihat Detail</span> <svg class="size-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> </svg> </span> </div> </a><a href="/projects/animasi-loading" class="animate-on-scroll project-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 block" data-title="animasi loading" data-category="Frontend" data-tech="html5,css3,animation"> <!-- Image Container --> <div class="relative h-32 overflow-hidden"> <img src="/images/animasi_loading.png" alt="Animasi Loading" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"> <!-- Subtle Overlay --> <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> </div> <div class="p-4"> <h3 class="font-bold mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Animasi Loading</h3> <p class="text-sm text-stone-600 dark:text-slate-400 mb-3">Koleksi animasi loading CSS modern untuk meningkatkan user experience.</p> <div class="flex flex-wrap gap-1 mb-3"> <span class="px-2 py-0.5 text-xs bg-stone-100 dark:bg-slate-700 rounded"> HTML5 </span><span class="px-2 py-0.5 text-xs bg-stone-100 dark:bg-slate-700 rounded"> CSS3 </span><span class="px-2 py-0.5 text-xs bg-stone-100 dark:bg-slate-700 rounded"> Animation </span> </div> <span class="text-green-600 dark:text-green-400 text-sm font-medium flex items-center gap-1"> <span class="group-hover:underline">Lihat Detail</span> <svg class="size-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> </svg> </span> </div> </a> </div> <!-- Empty State --> <div id="empty-state" class="hidden text-center p-12 bg-stone-100 dark:bg-slate-800 rounded-2xl"> <svg class="w-16 h-16 mx-auto text-stone-400 dark:text-slate-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path> </svg> <p class="text-stone-500 dark:text-slate-400 text-lg">Tidak ada projek yang ditemukan</p> <p class="text-stone-400 dark:text-slate-500 text-sm mt-1">Coba kata kunci atau filter lain</p> </div> </section> </main> <footer class="mx-auto mt-6 w-full max-w-5xl rounded-t-3xl bg-stone-300 p-6 text-center dark:bg-slate-700"> <p class="font-semibold">Created with ❤️ by <a href="/" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Zain Bagus</a></p> <p class="text-stone-600 dark:text-slate-400 mt-1"> <span>&copy; 2025 All rights reserved.</span> </p> <div class="flex justify-center gap-4 mt-4"> <a href="https://github.com/zenbgs" target="_blank" rel="noopener noreferrer" class="text-stone-600 hover:text-stone-900 dark:text-slate-400 dark:hover:text-slate-100 transition-colors"> <svg class="size-6" fill="currentColor" viewBox="0 0 24 24"> <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path> </svg> </a> <a href="https://linkedin.com/in/zenbgs" target="_blank" rel="noopener noreferrer" class="text-stone-600 hover:text-stone-900 dark:text-slate-400 dark:hover:text-slate-100 transition-colors"> <svg class="size-6" fill="currentColor" viewBox="0 0 24 24"> <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path> </svg> </a> <a href="https://instagram.com/zenbgs_" target="_blank" rel="noopener noreferrer" class="text-stone-600 hover:text-stone-900 dark:text-slate-400 dark:hover:text-slate-100 transition-colors"> <svg class="size-6" fill="currentColor" viewBox="0 0 24 24"> <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path> </svg> </a> <a href="https://api.whatsapp.com/send?phone=62895630959870" target="_blank" rel="noopener noreferrer" class="text-stone-600 hover:text-stone-900 dark:text-slate-400 dark:hover:text-slate-100 transition-colors"> <svg class="size-6" fill="currentColor" viewBox="0 0 24 24"> <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path> </svg> </a> <a href="mailto:zenbgsv@gmail.com" class="text-stone-600 hover:text-stone-900 dark:text-slate-400 dark:hover:text-slate-100 transition-colors"> <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path> </svg> </a> </div> </footer> </div> <script>
+    function setupProjectSearch() {
+      const searchInput = document.getElementById('project-search');
+      const categoryButtons = document.querySelectorAll('[data-category-filter]');
+      const projectCards = document.querySelectorAll('.project-card');
+      const emptyState = document.getElementById('empty-state');
+      const featuredSection = document.getElementById('featured-projects')?.parentElement;
+      const otherSection = document.getElementById('other-projects')?.parentElement;
+
+      let currentCategory = 'Semua';
+      let searchQuery = '';
+
+      function filterProjects() {
+        let visibleCount = 0;
+
+        projectCards.forEach(card => {
+          const title = card.dataset.title || '';
+          const category = card.dataset.category || '';
+          const tech = card.dataset.tech || '';
+
+          const matchesSearch = searchQuery === '' ||
+            title.includes(searchQuery.toLowerCase()) ||
+            tech.includes(searchQuery.toLowerCase());
+
+          const matchesCategory = currentCategory === 'Semua' || category === currentCategory;
+
+          if (matchesSearch && matchesCategory) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        // Show/hide empty state
+        if (visibleCount === 0) {
+          emptyState?.classList.remove('hidden');
+        } else {
+          emptyState?.classList.add('hidden');
+        }
+      }
+
+      // Search input handler
+      searchInput?.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        filterProjects();
+      });
+
+      // Category filter handler
+      categoryButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentCategory = btn.dataset.categoryFilter;
+
+          // Update button styles
+          categoryButtons.forEach(b => {
+            b.classList.remove('bg-green-500', 'text-white');
+            b.classList.add('bg-stone-200', 'dark:bg-slate-700');
+          });
+          btn.classList.remove('bg-stone-200', 'dark:bg-slate-700');
+          btn.classList.add('bg-green-500', 'text-white');
+
+          filterProjects();
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', setupProjectSearch);
+    document.addEventListener('astro:after-swap', setupProjectSearch);
+  </script>  <!-- Scroll to Top Button --> <button id="scroll-to-top" class="fixed bottom-6 right-6 z-50 group p-3 bg-gradient-to-br from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white rounded-full shadow-lg shadow-sky-500/30 opacity-0 invisible translate-y-4 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-sky-500/40 active:scale-95" aria-label="Scroll to top"> <svg class="w-5 h-5 transition-transform group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path> </svg> <!-- Ripple effect ring --> <span class="absolute inset-0 rounded-full border-2 border-sky-400/50 animate-ping opacity-0 group-hover:opacity-100"></span> </button> <script>
+      // Loading Screen
+      function hideLoadingScreen() {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen) {
+          loadingScreen.style.opacity = '0';
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+          }, 500);
+        }
+      }
+
+      // Hide loading when page is fully loaded
+      window.addEventListener('load', hideLoadingScreen);
+
+      // Also hide after view transitions
+      document.addEventListener('astro:page-load', hideLoadingScreen);
+
+      // Scroll to Top Button
+      function setupScrollToTop() {
+        const scrollBtn = document.getElementById('scroll-to-top');
+        if (!scrollBtn) return;
+
+        // Show/hide button based on scroll position
+        function toggleScrollButton() {
+          if (window.scrollY > 300) {
+            scrollBtn.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+            scrollBtn.classList.add('opacity-100', 'visible', 'translate-y-0');
+          } else {
+            scrollBtn.classList.add('opacity-0', 'invisible', 'translate-y-4');
+            scrollBtn.classList.remove('opacity-100', 'visible', 'translate-y-0');
+          }
+        }
+
+        // Scroll to top when clicked
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', toggleScrollButton, { passive: true });
+
+        // Initial check
+        toggleScrollButton();
+      }
+
+      // Setup on load
+      document.addEventListener('DOMContentLoaded', setupScrollToTop);
+      document.addEventListener('astro:after-swap', setupScrollToTop);
+    </script> </body> </html>

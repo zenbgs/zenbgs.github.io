@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="id"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Blog Dashboard - Admin</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><script type="module">tailwind.config={darkMode:"class",theme:{extend:{fontFamily:{sans:["Inter","system-ui","sans-serif"]}}}};</script><script type="module" src="/_astro/dashboard.astro_astro_type_script_index_1_lang.CxO_JRN6.js"></script><link rel="stylesheet" href="/_astro/dashboard.CvYvDYIE.css"></head> <body class="min-h-screen bg-slate-100 dark:bg-slate-900 font-sans"> <!-- Check Auth --> <script>
+    if (localStorage.getItem('adminLoggedIn') !== 'true') {
+      window.location.href = '/admin';
+    }
+  </script> <!-- Sidebar --> <aside id="sidebar" class="fixed left-0 top-0 z-40 h-screen w-64 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 transform -translate-x-full lg:translate-x-0 transition-transform duration-300"> <div class="p-6"> <!-- Logo --> <a href="/" class="flex items-center gap-3 mb-8"> <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center shadow-lg shadow-sky-500/30"> <span class="text-white font-bold">ZB</span> </div> <span class="font-bold text-lg text-slate-900 dark:text-white">Admin Panel</span> </a> <!-- Nav --> <nav class="space-y-2"> <a href="/admin/dashboard" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-sky-50 dark:bg-sky-900/30 text-sky-600 dark:text-sky-400 font-medium"> <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path> </svg>
+Blog Posts
+</a> <a href="/" target="_blank" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"> <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path> </svg>
+View Website
+</a> </nav> </div> <!-- Logout --> <div class="absolute bottom-0 left-0 right-0 p-6 border-t border-slate-200 dark:border-slate-700"> <button id="logout-btn" class="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"> <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path> </svg>
+Logout
+</button> </div> </aside> <!-- Mobile Header --> <header class="lg:hidden fixed top-0 left-0 right-0 z-30 bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-4 py-3"> <div class="flex items-center justify-between"> <button id="menu-toggle" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700"> <svg class="w-6 h-6 text-slate-600 dark:text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> <span class="font-bold text-slate-900 dark:text-white">Blog Dashboard</span> <div class="w-10"></div> </div> </header> <!-- Overlay --> <div id="overlay" class="fixed inset-0 bg-black/50 z-30 lg:hidden hidden"></div> <!-- Main Content --> <main class="lg:ml-64 min-h-screen pt-16 lg:pt-0"> <div class="p-6 lg:p-8"> <!-- Header --> <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8"> <div> <h1 class="text-2xl font-bold text-slate-900 dark:text-white">Blog Posts</h1> <p class="text-slate-500 dark:text-slate-400">Kelola konten blog kamu</p> </div> <button id="add-new-btn" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold rounded-xl shadow-lg shadow-sky-500/30 transition-all"> <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path> </svg>
+Tambah Post
+</button> </div> <!-- Stats --> <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8"> <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700"> <p class="text-sm text-slate-500 dark:text-slate-400 mb-1">Total Posts</p> <p class="text-2xl font-bold text-slate-900 dark:text-white" id="stat-total">6</p> </div> <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700"> <p class="text-sm text-slate-500 dark:text-slate-400 mb-1">Published</p> <p class="text-2xl font-bold text-green-600" id="stat-published">6</p> </div> <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700"> <p class="text-sm text-slate-500 dark:text-slate-400 mb-1">Draft</p> <p class="text-2xl font-bold text-yellow-600" id="stat-draft">0</p> </div> <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700"> <p class="text-sm text-slate-500 dark:text-slate-400 mb-1">Featured</p> <p class="text-2xl font-bold text-purple-600" id="stat-featured">1</p> </div> </div> <!-- Blog List --> <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden"> <div class="overflow-x-auto"> <table class="w-full"> <thead class="bg-slate-50 dark:bg-slate-700/50"> <tr> <th class="px-6 py-4 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Post</th> <th class="px-6 py-4 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider hidden md:table-cell">Category</th> <th class="px-6 py-4 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider hidden lg:table-cell">Date</th> <th class="px-6 py-4 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Status</th> <th class="px-6 py-4 text-right text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Actions</th> </tr> </thead> <tbody id="blog-table-body" class="divide-y divide-slate-200 dark:divide-slate-700"> <!-- Filled by JavaScript --> </tbody> </table> </div> </div> <!-- Export Button --> <div class="mt-6 flex flex-wrap gap-4"> <button id="export-btn" class="inline-flex items-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-colors"> <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path> </svg>
+Export JSON
+</button> <label class="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-600 hover:bg-slate-700 text-white font-semibold rounded-xl cursor-pointer transition-colors"> <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path> </svg>
+Import JSON
+<input type="file" id="import-input" accept=".json" class="hidden"> </label> </div> <!-- Instructions --> <div class="mt-8 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border border-blue-200 dark:border-blue-800"> <h3 class="font-bold text-blue-900 dark:text-blue-300 mb-2">Cara Menggunakan:</h3> <ol class="text-sm text-blue-800 dark:text-blue-400 space-y-1 list-decimal list-inside"> <li>Tambah/edit/hapus blog posts di dashboard ini</li> <li>Klik "Export JSON" untuk download file blogs.json</li> <li>Replace file <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">src/data/blogs.json</code> dengan file yang di-download</li> <li>Commit dan push ke GitHub untuk deploy perubahan</li> </ol> </div> </div> </main> <!-- Modal: Add/Edit Blog --> <div id="blog-modal" class="fixed inset-0 z-50 hidden"> <div class="absolute inset-0 bg-black/50" id="modal-backdrop"></div> <div class="absolute inset-4 lg:inset-10 flex items-start justify-center overflow-y-auto py-8"> <div class="relative bg-white dark:bg-slate-800 rounded-2xl shadow-2xl w-full max-w-3xl"> <div class="sticky top-0 bg-white dark:bg-slate-800 px-6 py-4 border-b border-slate-200 dark:border-slate-700 rounded-t-2xl flex items-center justify-between"> <h2 id="modal-title" class="text-xl font-bold text-slate-900 dark:text-white">Tambah Post Baru</h2> <button id="close-modal" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"> <svg class="w-5 h-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path> </svg> </button> </div> <form id="blog-form" class="p-6 space-y-5"> <input type="hidden" id="edit-index" value="-1"> <div class="grid md:grid-cols-2 gap-5"> <div> <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Judul *</label> <input type="text" id="blog-title" required class="w-full px-4 py-2.5 rounded-xl border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 focus:border-sky-500 outline-none transition-colors text-slate-900 dark:text-white"> </div> <div> <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Slug *</label> <input type="text" id="blog-slug" required class="w-full px-4 py-2.5 rounded-xl border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 focus:border-sky-500 outline-none transition-colors text-slate-900 dark:text-white" placeholder="judul-dalam-url"> </div> </div> <div> <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Excerpt *</label> <textarea id="blog-excerpt" required rows="2" class="w-full px-4 py-2.5 rounded-xl border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 focus:border-sky-500 outline-none transition-colors resize-none text-slate-900 dark:text-white" placeholder="Ringkasan singkat..."></textarea> </div> <div> <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Content * (Markdown supported)</label> <textarea id="blog-content" required rows="10" class="w-full px-4 py-2.5 rounded-xl border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 focus:border-sky-500 outline-none transition-colors resize-none font-mono text-sm text-slate-900 dark:text-white" placeholder="Tulis konten blog dengan Markdown..."></textarea> </div> <div class="grid md:grid-cols-3 gap-5"> <div> <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Category *</label> <select id="blog-category" required class="w-full px-4 py-2.5 rounded-xl border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 focus:border-sky-500 outline-none transition-colors text-slate-900 dark:text-white"> <option value="DevOps">DevOps</option> <option value="Tutorial">Tutorial</option> <option value="Backend">Backend</option> <option value="Frontend">Frontend</option> <option value="Career">Career</option> <option value="Other">Other</option> </select> </div> <div> <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Read Time *</label> <input type="text" id="blog-readtime" required class="w-full px-4 py-2.5 rounded-xl border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 focus:border-sky-500 outline-none transition-colors text-slate-900 dark:text-white" placeholder="8 menit"> </div> <div> <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Date *</label> <input type="date" id="blog-date" required class="w-full px-4 py-2.5 rounded-xl border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 focus:border-sky-500 outline-none transition-colors text-slate-900 dark:text-white"> </div> </div> <div> <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Tags (comma separated)</label> <input type="text" id="blog-tags" class="w-full px-4 py-2.5 rounded-xl border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 focus:border-sky-500 outline-none transition-colors text-slate-900 dark:text-white" placeholder="devops, tutorial, cloud"> </div> <div class="flex items-center gap-6"> <label class="flex items-center gap-2 cursor-pointer"> <input type="checkbox" id="blog-published" class="w-5 h-5 rounded border-slate-300 text-sky-600 focus:ring-sky-500"> <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Published</span> </label> <label class="flex items-center gap-2 cursor-pointer"> <input type="checkbox" id="blog-featured" class="w-5 h-5 rounded border-slate-300 text-purple-600 focus:ring-purple-500"> <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Featured</span> </label> </div> <div class="flex gap-3 pt-4 border-t border-slate-200 dark:border-slate-700"> <button type="submit" class="flex-1 px-6 py-3 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-bold rounded-xl transition-all">
+Simpan
+</button> <button type="button" id="cancel-btn" class="px-6 py-3 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold rounded-xl hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">
+Batal
+</button> </div> </form> </div> </div> </div> <!-- Toast Container --> <div id="toast-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col gap-2"></div> <script>(function(){const initialBlogs = [{"slug":"memulai-karir-devops-engineer","title":"Memulai Karir sebagai DevOps Engineer","excerpt":"Panduan lengkap untuk memulai karir di bidang DevOps, mulai dari skill yang dibutuhkan hingga tools yang wajib dikuasai.","content":"DevOps adalah kombinasi dari Development dan Operations yang bertujuan untuk mempercepat proses pengembangan software dengan kolaborasi yang lebih baik.\n\n## Apa itu DevOps?\n\nDevOps bukan hanya tentang tools, tapi juga tentang kultur dan mindset. Seorang DevOps Engineer bertugas menjembatani gap antara tim development dan operations.\n\n## Skill yang Dibutuhkan\n\n1. **Linux Administration** - Memahami command line, file system, dan system administration\n2. **Scripting** - Bash, Python, atau PowerShell untuk automation\n3. **Version Control** - Git adalah must-have\n4. **CI/CD** - Jenkins, GitHub Actions, GitLab CI\n5. **Containerization** - Docker dan Kubernetes\n6. **Cloud Platform** - AWS, GCP, atau Azure\n7. **Infrastructure as Code** - Terraform, Ansible\n\n## Tools yang Wajib Dikuasai\n\n- Docker & Docker Compose\n- Kubernetes\n- Jenkins / GitHub Actions\n- Terraform\n- Prometheus & Grafana\n- Nginx / Apache\n\n## Tips Memulai\n\n1. Mulai dari Linux basics\n2. Pelajari Git dengan baik\n3. Buat project automation sederhana\n4. Ikuti sertifikasi cloud (AWS/GCP)\n5. Bangun portfolio dengan real projects\n\nSelamat belajar dan semoga sukses dalam karir DevOps!","date":"2024-12-15","readTime":"8 menit","category":"DevOps","tags":["devops","career","cloud","automation"],"published":true,"featured":true},{"slug":"docker-untuk-pemula","title":"Docker untuk Pemula: Dari Nol hingga Mahir","excerpt":"Tutorial lengkap Docker dari instalasi, membuat container, hingga deployment aplikasi menggunakan Docker Compose.","content":"Docker adalah platform containerization yang memungkinkan kita menjalankan aplikasi dalam environment yang terisolasi.\n\n## Mengapa Docker?\n\n- **Konsistensi** - \"Works on my machine\" tidak lagi jadi masalah\n- **Portabilitas** - Jalankan di mana saja\n- **Efisiensi** - Lebih ringan dari VM\n- **Scalability** - Mudah di-scale\n\n## Instalasi Docker\n\n```bash\n# Ubuntu/Debian\nsudo apt update\nsudo apt install docker.io\nsudo systemctl start docker\nsudo systemctl enable docker\n```\n\n## Konsep Dasar\n\n1. **Image** - Template read-only untuk container\n2. **Container** - Instance dari image yang running\n3. **Dockerfile** - Script untuk build image\n4. **Docker Compose** - Tool untuk multi-container apps\n\n## Command Penting\n\n```bash\ndocker pull nginx          # Download image\ndocker run -d nginx        # Jalankan container\ndocker ps                  # List containers\ndocker stop <id>           # Stop container\ndocker logs <id>           # Lihat logs\n```\n\n## Dockerfile Example\n\n```dockerfile\nFROM node:18-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nEXPOSE 3000\nCMD [\"npm\", \"start\"]\n```\n\nDengan Docker, deployment jadi lebih mudah dan konsisten!","date":"2024-12-10","readTime":"12 menit","category":"Tutorial","tags":["docker","containerization","devops","tutorial"],"published":true,"featured":false},{"slug":"rest-api-expressjs-mongodb","title":"Membangun REST API dengan ExpressJS dan MongoDB","excerpt":"Panduan step-by-step membuat REST API yang robust dengan authentication, validation, dan best practices.","content":"Dalam tutorial ini, kita akan membangun REST API lengkap dengan ExpressJS dan MongoDB.\n\n## Setup Project\n\n```bash\nmkdir my-api && cd my-api\nnpm init -y\nnpm install express mongoose dotenv bcryptjs jsonwebtoken\n```\n\n## Struktur Folder\n\n```\nsrc/\n├── controllers/\n├── models/\n├── routes/\n├── middleware/\n└── index.js\n```\n\n## Model User\n\n```javascript\nconst mongoose = require('mongoose');\n\nconst userSchema = new mongoose.Schema({\n  name: { type: String, required: true },\n  email: { type: String, required: true, unique: true },\n  password: { type: String, required: true }\n}, { timestamps: true });\n\nmodule.exports = mongoose.model('User', userSchema);\n```\n\n## CRUD Endpoints\n\n- GET /api/users - Get all users\n- GET /api/users/:id - Get user by ID\n- POST /api/users - Create user\n- PUT /api/users/:id - Update user\n- DELETE /api/users/:id - Delete user\n\n## Authentication Middleware\n\n```javascript\nconst jwt = require('jsonwebtoken');\n\nconst auth = (req, res, next) => {\n  const token = req.header('Authorization')?.replace('Bearer ', '');\n  if (!token) return res.status(401).json({ error: 'Access denied' });\n  \n  try {\n    const decoded = jwt.verify(token, process.env.JWT_SECRET);\n    req.user = decoded;\n    next();\n  } catch (err) {\n    res.status(400).json({ error: 'Invalid token' });\n  }\n};\n```\n\nDengan struktur ini, API kamu akan scalable dan maintainable!","date":"2024-12-05","readTime":"15 menit","category":"Backend","tags":["nodejs","expressjs","mongodb","api","backend"],"published":true,"featured":false},{"slug":"tips-portfolio-website-menarik","title":"Tips Membuat Portfolio Website yang Menarik","excerpt":"Bagaimana membuat portfolio yang standout dan menarik perhatian recruiter serta klien potensial.","content":"Portfolio website adalah first impression kamu ke dunia profesional. Berikut tips membuatnya menarik!\n\n## 1. Desain yang Clean dan Modern\n\n- Gunakan whitespace dengan baik\n- Pilih color palette yang konsisten\n- Typography yang readable\n- Mobile-responsive adalah WAJIB\n\n## 2. Konten yang Penting\n\n- **Hero Section** - Siapa kamu dan apa yang kamu lakukan\n- **Projects** - Showcase best works dengan case study\n- **Skills** - Tech stack yang kamu kuasai\n- **About** - Ceritakan story kamu\n- **Contact** - Cara menghubungi kamu\n\n## 3. Showcase Projects dengan Baik\n\n- Screenshot atau demo video\n- Tech stack yang digunakan\n- Problem yang dipecahkan\n- Link ke live demo dan source code\n\n## 4. Personal Branding\n\n- Gunakan nama domain personal\n- Konsisten dengan social media\n- Tulis blog untuk thought leadership\n\n## 5. Performance Matters\n\n- Fast loading time\n- SEO optimized\n- Accessible untuk semua\n\n## Tech Stack Recommendations\n\n- **Static**: Astro, Next.js, Gatsby\n- **Styling**: Tailwind CSS\n- **Hosting**: Vercel, Netlify, GitHub Pages\n\nIngat: Portfolio adalah representasi skill kamu. Buat yang terbaik!","date":"2024-11-28","readTime":"6 menit","category":"Career","tags":["portfolio","career","tips","web-development"],"published":true,"featured":false},{"slug":"react-hooks-usestate-useeffect","title":"ReactJS Hooks: useState dan useEffect Explained","excerpt":"Penjelasan mendalam tentang React Hooks yang paling sering digunakan beserta contoh implementasinya.","content":"React Hooks memungkinkan kita menggunakan state dan lifecycle features tanpa class components.\n\n## useState\n\nHook untuk mengelola state di functional component.\n\n```jsx\nimport { useState } from 'react';\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n  \n  return (\n    <div>\n      <p>Count: {count}</p>\n      <button onClick={() => setCount(count + 1)}>+</button>\n    </div>\n  );\n}\n```\n\n## useEffect\n\nHook untuk side effects (API calls, subscriptions, DOM manipulation).\n\n```jsx\nimport { useState, useEffect } from 'react';\n\nfunction UserProfile({ userId }) {\n  const [user, setUser] = useState(null);\n  \n  useEffect(() => {\n    fetch(`/api/users/${userId}`)\n      .then(res => res.json())\n      .then(data => setUser(data));\n  }, [userId]); // Dependency array\n  \n  return user ? <h1>{user.name}</h1> : <p>Loading...</p>;\n}\n```\n\n## Dependency Array\n\n- `[]` - Run sekali saat mount\n- `[dep]` - Run saat dep berubah\n- Tanpa array - Run setiap render\n\n## Cleanup Function\n\n```jsx\nuseEffect(() => {\n  const subscription = subscribe();\n  \n  return () => {\n    subscription.unsubscribe(); // Cleanup\n  };\n}, []);\n```\n\n## Common Patterns\n\n1. Fetching data on mount\n2. Subscribing to events\n3. Setting up timers\n4. Syncing with external systems\n\nDengan memahami hooks, kamu bisa menulis React code yang lebih clean dan maintainable!","date":"2024-11-20","readTime":"10 menit","category":"Frontend","tags":["react","hooks","javascript","frontend"],"published":true,"featured":false},{"slug":"cicd-pipeline-github-actions","title":"CI/CD Pipeline dengan GitHub Actions","excerpt":"Cara setup automated deployment menggunakan GitHub Actions untuk project Node.js dan React.","content":"GitHub Actions adalah powerful tool untuk automating CI/CD pipeline langsung dari repository.\n\n## Apa itu CI/CD?\n\n- **CI (Continuous Integration)** - Automated testing setiap push\n- **CD (Continuous Deployment)** - Automated deployment ke production\n\n## Basic Workflow\n\nBuat file `.github/workflows/deploy.yml`:\n\n```yaml\nname: Deploy\n\non:\n  push:\n    branches: [main]\n\njobs:\n  build-and-deploy:\n    runs-on: ubuntu-latest\n    \n    steps:\n      - uses: actions/checkout@v3\n      \n      - name: Setup Node.js\n        uses: actions/setup-node@v3\n        with:\n          node-version: '18'\n          \n      - name: Install dependencies\n        run: npm ci\n        \n      - name: Run tests\n        run: npm test\n        \n      - name: Build\n        run: npm run build\n        \n      - name: Deploy to GitHub Pages\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          publish_dir: ./dist\n```\n\n## Key Concepts\n\n1. **Triggers** - on: push, pull_request, schedule\n2. **Jobs** - Serangkaian steps yang berjalan\n3. **Steps** - Individual tasks dalam job\n4. **Actions** - Reusable workflow units\n5. **Secrets** - Secure environment variables\n\n## Best Practices\n\n- Cache dependencies untuk speed\n- Run tests sebelum deploy\n- Use environment secrets\n- Implement staging environment\n\nDengan GitHub Actions, deployment jadi automated dan reliable!","date":"2024-11-15","readTime":"8 menit","category":"DevOps","tags":["github-actions","cicd","automation","devops"],"published":true,"featured":false}];
+
+    // State
+    let blogsData = [...initialBlogs];
+
+    // Elements
+    const tableBody = document.getElementById('blog-table-body');
+    const modal = document.getElementById('blog-modal');
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const modalTitle = document.getElementById('modal-title');
+    const blogForm = document.getElementById('blog-form');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const menuToggle = document.getElementById('menu-toggle');
+
+    // Mobile menu
+    menuToggle?.addEventListener('click', () => {
+      sidebar.classList.toggle('-translate-x-full');
+      overlay.classList.toggle('hidden');
+    });
+
+    overlay?.addEventListener('click', () => {
+      sidebar.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
+    });
+
+    // Logout
+    document.getElementById('logout-btn')?.addEventListener('click', () => {
+      localStorage.removeItem('adminLoggedIn');
+      localStorage.removeItem('adminLoginTime');
+      window.location.href = '/admin';
+    });
+
+    // Toast function
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = `px-5 py-3 rounded-xl shadow-lg flex items-center gap-3 transform translate-x-full opacity-0 transition-all duration-300 ${
+        type === 'success' ? 'bg-green-500 text-white' :
+        type === 'error' ? 'bg-red-500 text-white' : 'bg-blue-500 text-white'
+      }`;
+      toast.innerHTML = `<span class="font-medium">${message}</span>`;
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-x-full', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('translate-x-full', 'opacity-0');
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    // Render table
+    function renderTable() {
+      tableBody.innerHTML = blogsData.map((blog, index) => `
+        <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+          <td class="px-6 py-4">
+            <div>
+              <p class="font-semibold text-slate-900 dark:text-white">${blog.title}</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400 truncate max-w-xs">${blog.excerpt}</p>
+            </div>
+          </td>
+          <td class="px-6 py-4 hidden md:table-cell">
+            <span class="px-3 py-1 text-xs font-medium bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 rounded-full">
+              ${blog.category}
+            </span>
+          </td>
+          <td class="px-6 py-4 hidden lg:table-cell text-sm text-slate-500 dark:text-slate-400">
+            ${new Date(blog.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}
+          </td>
+          <td class="px-6 py-4">
+            <div class="flex items-center gap-2">
+              ${blog.published
+                ? '<span class="px-2 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full">Published</span>'
+                : '<span class="px-2 py-1 text-xs font-medium bg-yellow-100 dark:bg-yellow-900/50 text-yellow-700 dark:text-yellow-300 rounded-full">Draft</span>'
+              }
+              ${blog.featured ? '<span class="px-2 py-1 text-xs font-medium bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 rounded-full">Featured</span>' : ''}
+            </div>
+          </td>
+          <td class="px-6 py-4">
+            <div class="flex items-center justify-end gap-2">
+              <button onclick="editBlog(${index})" class="p-2 text-slate-500 hover:text-sky-600 hover:bg-sky-50 dark:hover:bg-sky-900/30 rounded-lg transition-colors" title="Edit">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                </svg>
+              </button>
+              <button onclick="deleteBlog(${index})" class="p-2 text-slate-500 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-lg transition-colors" title="Delete">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+
+      // Update stats
+      document.getElementById('stat-total').textContent = blogsData.length;
+      document.getElementById('stat-published').textContent = blogsData.filter(b => b.published).length;
+      document.getElementById('stat-draft').textContent = blogsData.filter(b => !b.published).length;
+      document.getElementById('stat-featured').textContent = blogsData.filter(b => b.featured).length;
+    }
+
+    // Generate slug from title
+    function generateSlug(title) {
+      return title.toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .trim();
+    }
+
+    // Auto-generate slug
+    document.getElementById('blog-title')?.addEventListener('input', (e) => {
+      const slugInput = document.getElementById('blog-slug');
+      const editIndex = document.getElementById('edit-index').value;
+      if (editIndex === '-1') { // Only auto-generate for new posts
+        slugInput.value = generateSlug(e.target.value);
+      }
+    });
+
+    // Open modal for new post
+    document.getElementById('add-new-btn')?.addEventListener('click', () => {
+      modalTitle.textContent = 'Tambah Post Baru';
+      blogForm.reset();
+      document.getElementById('edit-index').value = '-1';
+      document.getElementById('blog-date').value = new Date().toISOString().split('T')[0];
+      modal.classList.remove('hidden');
+    });
+
+    // Edit blog
+    window.editBlog = function(index) {
+      const blog = blogsData[index];
+      modalTitle.textContent = 'Edit Post';
+      document.getElementById('edit-index').value = index;
+      document.getElementById('blog-title').value = blog.title;
+      document.getElementById('blog-slug').value = blog.slug;
+      document.getElementById('blog-excerpt').value = blog.excerpt;
+      document.getElementById('blog-content').value = blog.content;
+      document.getElementById('blog-category').value = blog.category;
+      document.getElementById('blog-readtime').value = blog.readTime;
+      document.getElementById('blog-date').value = blog.date;
+      document.getElementById('blog-tags').value = blog.tags?.join(', ') || '';
+      document.getElementById('blog-published').checked = blog.published;
+      document.getElementById('blog-featured').checked = blog.featured;
+      modal.classList.remove('hidden');
+    };
+
+    // Delete blog
+    window.deleteBlog = function(index) {
+      if (confirm(`Hapus post "${blogsData[index].title}"?`)) {
+        blogsData.splice(index, 1);
+        renderTable();
+        showToast('Post berhasil dihapus', 'success');
+      }
+    };
+
+    // Close modal
+    document.getElementById('close-modal')?.addEventListener('click', () => modal.classList.add('hidden'));
+    document.getElementById('cancel-btn')?.addEventListener('click', () => modal.classList.add('hidden'));
+    modalBackdrop?.addEventListener('click', () => modal.classList.add('hidden'));
+
+    // Save blog
+    blogForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const blogData = {
+        slug: document.getElementById('blog-slug').value,
+        title: document.getElementById('blog-title').value,
+        excerpt: document.getElementById('blog-excerpt').value,
+        content: document.getElementById('blog-content').value,
+        date: document.getElementById('blog-date').value,
+        readTime: document.getElementById('blog-readtime').value,
+        category: document.getElementById('blog-category').value,
+        tags: document.getElementById('blog-tags').value.split(',').map(t => t.trim()).filter(t => t),
+        published: document.getElementById('blog-published').checked,
+        featured: document.getElementById('blog-featured').checked
+      };
+
+      const editIndex = parseInt(document.getElementById('edit-index').value);
+
+      if (editIndex === -1) {
+        blogsData.unshift(blogData);
+        showToast('Post berhasil ditambahkan', 'success');
+      } else {
+        blogsData[editIndex] = blogData;
+        showToast('Post berhasil diperbarui', 'success');
+      }
+
+      renderTable();
+      modal.classList.add('hidden');
+    });
+
+    // Export JSON
+    document.getElementById('export-btn')?.addEventListener('click', () => {
+      const dataStr = JSON.stringify(blogsData, null, 2);
+      const blob = new Blob([dataStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'blogs.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('blogs.json berhasil di-export', 'success');
+    });
+
+    // Import JSON
+    document.getElementById('import-input')?.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const imported = JSON.parse(event.target.result);
+          if (Array.isArray(imported)) {
+            blogsData = imported;
+            renderTable();
+            showToast(`${imported.length} posts berhasil di-import`, 'success');
+          } else {
+            throw new Error('Invalid format');
+          }
+        } catch (err) {
+          showToast('Gagal import: format file tidak valid', 'error');
+        }
+      };
+      reader.readAsText(file);
+      e.target.value = '';
+    });
+
+    // Initial render
+    renderTable();
+  })();</script> </body> </html>
