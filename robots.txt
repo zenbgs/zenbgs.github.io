@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Halaman admin sudah dihapus. Baris ini menjaga URL lama
+# tidak dirayapi ulang selama masih ada di cache mesin pencari.
+Disallow: /admin/
